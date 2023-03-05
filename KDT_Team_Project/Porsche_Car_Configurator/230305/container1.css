@@ -120,7 +120,7 @@ section #car_image{
 
 aside{
     width:30%;
-    min-width:400px;
+    min-width:420px;
     height:100%;
     /* border:1px magenta solid; */
     
@@ -210,6 +210,7 @@ aside #list{
     align-items: center;
     
 }
+
 .list_box{
     width:90%;
     height:50px;
@@ -223,13 +224,6 @@ aside #list{
     cursor: pointer;
 }
 /* when each list_box is hovered, list_box`s nth-child style changes */
-[id *= "_box"]{
-    margin-top:5px;
-    background-color: rgb(191, 224, 224); 
-    width:90%; 
-    height:0px;
-    display:none;
-}
 .list_box i{
     margin-top: 14px;
     height:20px;
