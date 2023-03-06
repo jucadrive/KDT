@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.slide-container {
+    width: 300vw;
+}
+.slide {
+    width: 100vw;
+    float: left;
+}
