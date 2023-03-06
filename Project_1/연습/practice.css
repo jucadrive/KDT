@@ -2,10 +2,28 @@
     margin: 0;
     padding: 0;
 }
-.slide-container {
-    width: 300vw;
+.slide_wrapper {
+position: relative;
+margin: 0 auto;
+height: 100vh;
+overflow: hidden;
 }
-.slide {
+.slides {
+    position: absolute;
+    left: 0; top: 0;
+}
+.slides li:not(:last-child) {
     width: 100vw;
     float: left;
+    margin-right: 30px;
+}
+.page_btn {
+    text-align: center;
+    margin-top: 50px;
+}
+.page_btn span {
+    background: #333;
+    color: red;
+    padding: 10px, 20px;
+    margin: 0px , 10px;
 }

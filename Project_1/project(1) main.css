@@ -1,40 +1,8 @@
-
+/* /* 
 html,
 body {
     position: relative;
-    /* height: 100%; */
-}
-li {
-    list-style: none;
-}
-.slide_wrapper {
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-    width: 1920vw;
-    height: 200vh;
-}
-.slides {
-    position: absolute;
-    left: 0; top: 0;
-}
-.slides.animated {
-    transition: 0.5s ease-out;
-}
-.slides li {
-    width: 50%;
-    height: 100%;
-    float: left;
-}
-.slides li:not(:last-child) {
-    margin-right: 30px;
-}
-.page_btn {
-    text-align: center;
-    margin-top: 50px;
-}
-
-
+} */
 
 
 /* #img1 {
