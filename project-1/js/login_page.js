@@ -5,10 +5,10 @@ const pwd_error = document.querySelector('.pwd_error')
 
 console.log(email, pwd, email_error, pwd_error);
 
-email.addEventListener('click', function(){
+email.addEventListener('focus', function(){
   email_error.style.display = 'block'
 });
-pwd.addEventListener('click', function(){
+pwd.addEventListener('focus', function(){
   pwd_error.style.display = 'block'
 });
 

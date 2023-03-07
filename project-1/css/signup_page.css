@@ -120,3 +120,9 @@ a {
   color: red;
     display: none;
 }
+.required {
+  display: inline-block;
+  display: none;
+  margin: 7px 0 7px 3px;
+  color: red;
+}
