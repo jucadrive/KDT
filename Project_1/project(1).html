@@ -10,40 +10,46 @@
   <link rel="stylesheet" href="project(1) header.css" type="text/css">
   <link rel="stylesheet" href="project(1) footer.css" type="text/css">
   <link rel="stylesheet" href="project(1) main.css" type="text/css">
-  
+
 
 </head>
 
 <body>
-  <header>
-    <a href="#"><img src="E:\html\Project_1\img\main_porsche-logo.jpg" class="logo_img"></a>
-    <div class="links">
-      <a href="E:\html\Project_1\infomation\model_info.html" class="main_menu">INFORMATION</a>
-      <a href="#" class="main_menu">PORSCHE 911</a>
-      <a href="#" class="main_menu">CUSTOMIZING</a>
-      <a href="E:\html\Project_1\login\login_page.html" class="main_menu">SIGN UP</a>
-    </div>
-    </script>
-    <div class="top_icon">
-      <div class="icons">
-        <a href="E:\html\Project_1\login\login_page.html"><i class="fa-solid fa-person"></i></a>
-        <a href="#"><i class="fa-solid fa-cart-plus"></i></a>
-        <a href="https://www.instagram.com/porsche/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <div style="width:100vw; height:100vh;">
+    <header>
+      <a href="#"><img src="E:\html\Project_1\img\main_porsche-logo.jpg" class="logo_img"></a>
+      <div class="links">
+        <a href="E:\html\Project_1\infomation\model_info.html" class="main_menu" id="info" onmouseover="kor1()"
+          onmouseout="eng1()">INFORMATION</a>
+        <a href="#" class="main_menu" id="carname" onmouseover="kor2()" onmouseout="eng2()">PORSCHE 911</a>
+        <a href="#" class="main_menu" id="choicecar" onmouseover="kor3()" onmouseout="eng3()">CUSTOMIZING</a>
+        <a href="E:\html\Project_1\login\login_page.html" class="main_menu" id="login" onmouseover="kor4()"
+          onmouseout="eng4()">SIGN UP</a>
       </div>
-    </div>
-    <input type="button"><a href="#" id="add_menu"><i class="fa-solid fa-grip-lines"></i></a>
+      <div class="top_icon">
+        <div class="icons">
+          <a href="E:\html\Project_1\login\login_page.html"><i class="fa-solid fa-person"></i></a>
+          <a href="#"><i class="fa-solid fa-cart-plus"></i></a>
+          <a href="https://www.instagram.com/porsche/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <input type="button"><a href="#" id="add_menu"><i class="fa-solid fa-grip-lines"></i></a>
+    </header>
 
-  </header>
-
-  <main>
-    <div class="slide_wrapper">
-      <ul class="slides">
-        <li><img src="E:/html/Project_1/img/main_1.jpg"></li>
-        <li><img src="E:/html/Project_1/img/main_2.jpg"></li>
-        <li><img src="E:/html/Project_1/img/main_3.jpg"></li>
-      </ul>
-  </main>
-
+    <main>
+      <div class="slide_wrapper">
+        <div><span class="prev"><i class="fa-solid fa-chevron-left"></i></span></div>
+        <ul class="slides">
+          <li><img src="E:/html/Project_1/img/main_1.jpg"></li>
+          <li><img src="E:/html/Project_1/img/main_4.jpg"></li>
+          <li><img src="E:/html/Project_1/img/main_2.jpg"></li>
+          <li><img src="E:/html/Project_1/img/main_3.jpg"></li>
+          <li><img src="E:/html/Project_1/img/main_5.jpg"></li>
+        </ul>
+        <div><span class="next"><i class="fa-solid fa-chevron-right"></i></span></div>
+      </div>
+    </main>
+  </div>
   <footer>
     <div>
       <div class="notice_box">
@@ -123,9 +129,11 @@
         </p>
       </div>
   </footer>
+
+  <script src="E:\html\Project_1\js\_header.js"></script>
   <script src="E:\html\Project_1\js\slide_move.js"></script>
-  <script src="E:\html\Project_1\js\menu.toggle.js"></script>
   <script src="https://kit.fontawesome.com/59ceb84805.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
