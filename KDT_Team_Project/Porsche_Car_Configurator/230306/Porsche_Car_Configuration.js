@@ -54,7 +54,7 @@ function aa(){
     
   })
 }
-// 클릭시 커지는 효과
+// 옵션 클릭시 하나만 픽 되면서 커지는 효과
 var switch1="off";
 var option_style=0;
 var count1=0

@@ -19,7 +19,7 @@ for(var i=0; i<20;i++){
 var switch1="off";
 var option_style=0;
 var count=[];
-for(var i=0;i<10;i++){
+for(var i=0;i<20;i++){
   count[i]=0;
 }
 
@@ -29,7 +29,7 @@ function click_function(class_name,id){
     equipTotal(class_name, id);
     equip_value_arr_text();
     title_value(class_name, id);
-    exp(class_name,id);
+    optionSelectEffect(class_name,id)
     // if(class_name=="group1"){optionStyle_extcolour(id);};
     // if(class_name=="group2"){optionStyle_wheels(id);};
     // if(class_name=="group3"){optionStyle_PaintedWheels(id);};
@@ -65,31 +65,26 @@ function list_box_active(ID){
 function equipTotal(class_name, id){
   var price=$(`#${id}`).attr('value')
   
-  for(var i=0;i<arr.length;i++){
+  for(var i=0;i<arr.length-14;i++){
 
-    switch(class_name){
-      case`group${i+1}`:
-      arr[i]=Number(price)
-    }
-    switch(class_name){
-      case`group${i+2}`:
-      arr[i+1]=Number(price)
-    }
-    switch(class_name){
-      case`group${i+3}`:
-      arr[i+2]=Number(price)
-    }
-    switch(class_name){
-      case`group${i+4}`:
-      arr[i+3]=Number(price)
-    }
-    switch(class_name){
-      case`group${i+5}`:
-      arr[i+4]=Number(price)
-    }
+    switch(class_name){case`group${i+1}`:arr[i]=Number(price)}
+    switch(class_name){case`group${i+2}`:arr[i+1]=Number(price)}
+    switch(class_name){case`group${i+3}`:arr[i+2]=Number(price)}
+    switch(class_name){case`group${i+4}`:arr[i+3]=Number(price)}
+    switch(class_name){case`group${i+5}`:arr[i+4]=Number(price)}
+    switch(class_name){case`group${i+6}`:arr[i+5]=Number(price)}
+    switch(class_name){case`group${i+7}`:arr[i+6]=Number(price)}
+    switch(class_name){case`group${i+8}`:arr[i+7]=Number(price)}
+    switch(class_name){case`group${i+9}`:arr[i+8]=Number(price)}
+    switch(class_name){case`group${i+10}`:arr[i+9]=Number(price)}
+    switch(class_name){case`group${i+11}`:arr[i+10]=Number(price)}
+    switch(class_name){case`group${i+12}`:arr[i+11]=Number(price)}
+    switch(class_name){case`group${i+13}`:arr[i+12]=Number(price)}
+    switch(class_name){case`group${i+14}`:arr[i+13]=Number(price)}
+    switch(class_name){case`group${i+15}`:arr[i+14]=Number(price)}
   }
   console.log(arr);
-  sum=arr[0]+arr[1]+arr[2]+arr[3]+arr[4]+arr[5]+arr[6]+arr[7]+arr[8]+arr[9]+arr[10]+arr[11];
+  sum=arr[0]+arr[1]+arr[2]+arr[3]+arr[4]+arr[5]+arr[6]+arr[7]+arr[8]+arr[9]+arr[10]+arr[11]+arr[12]+arr[13]+arr[14];
   
   let total_value=document.getElementById("total_value");
  
@@ -110,7 +105,7 @@ function base_price(){
  // 각 옵션의 표시될 텍스트 출력
 function equip_value_arr_text()
  {
-   for(var i=0;i<5;i++){
+   for(var i=0;i<14;i++){
    equip_value_arr[i].innerText=arr[i] + " ₩"
    }
  }
@@ -125,35 +120,43 @@ if(class_name == "group2"){title_value_arr[1].innerText= title.split("-")[0];}
 if(class_name == "group3"){title_value_arr[2].innerText= title.split("-")[0];}
 if(class_name == "group4"){title_value_arr[3].innerText= title.split("-")[0];}
 if(class_name == "group5"){title_value_arr[4].innerText= title.split("-")[0];}
+if(class_name == "group6"){title_value_arr[5].innerText= title.split("-")[0];}
+if(class_name == "group7"){title_value_arr[6].innerText= title.split("-")[0];}
+if(class_name == "group8"){title_value_arr[7].innerText= title.split("-")[0];}
+if(class_name == "group9"){title_value_arr[8].innerText= title.split("-")[0];}
+if(class_name == "group10"){title_value_arr[9].innerText= title.split("-")[0];}
+if(class_name == "group11"){title_value_arr[10].innerText= title.split("-")[0];}
+if(class_name == "group12"){title_value_arr[11].innerText= title.split("-")[0];}
+if(class_name == "group13"){title_value_arr[12].innerText= title.split("-")[0];}
+if(class_name == "group14"){title_value_arr[13].innerText= title.split("-")[0];}
+if(class_name == "group15"){title_value_arr[14].innerText= title.split("-")[0];}
   
 }
 
-function exp(class_name,id){
+function optionSelectEffect(class_name,id){
   
-  
-  // count[i]+=1;
+// 클릭시 커지는 효과;
 for(var i=0;i<20;i++){
 
-  if(count[i]*2 % 2==0){
-    $(`.group${i+1}`).css({
-      transform:"scale(1)",
-      boxShadow: "none"
-    })
-    $(`#${id}`).css({
-      transform:"scale(1.1)",
-      boxShadow: "0px 0px 3px 1px rgb(34, 34, 34)"
+  if(class_name==`group${i+1}`){
+    count[i]+=1
+    if(count[i]*2 % 2==0){
+      $(`.group${i+1}`).css({
+        transform:"scale(1)",
+        boxShadow: "none"
+      })
+      $(`#${id}`).css({
+        transform:"scale(1.1)",
+        boxShadow: "0px 0px 3px 1px rgb(34, 34, 34)"
+        
+      }) 
       
-    }) 
-    if(class_name==`group${i}`){
-      count[i]+=1
-    }
-    console.log("카운트 : "+count);
-  }
-  
-
+      console.log("카운트 : "+count);
+     }
+   } 
   } 
 }
-// 클릭시 커지는 효과
+/*****************************************************************************/ 
 // exterior colours : count & change style
 function optionStyle_extcolour(id){
   

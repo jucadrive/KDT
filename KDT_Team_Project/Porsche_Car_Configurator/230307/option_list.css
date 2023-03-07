@@ -10,16 +10,14 @@
     font-weight:100;
 }
 /* 각 옵션 크기 */
- [id*="_box"] [id^="i"] {
+ [id*="_box"] > div > [id^="i"] {
     width:60px;
     height:60px;
     display:inline-block; 
     z-index:-1;
     margin: 20px 0px 0px;  
 }
-[id*="_box"]  txt{
-    line-height: 15px;
-}
+
 /* 옵션 별 이름과 가격이 나오는 구역 */
 .equip_val1{
     height:15px;
@@ -27,12 +25,17 @@
 }
 .equip_val2{
     height:15px;
-    margin-top: 5px;
     text-align: right;
+    margin-top: 10px;
 }
-/* 옵션 리스트 그룹의 이름을 표시하는 구역 ex) exterior colours의 standard colour, Metalic colour.... */
+
 .mycar_option{
     margin-top: 20px;
+    width:100%;
+    height:auto;
+    text-align:left;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    padding-bottom: 10px;
 }
 /* 색상 옵션은 명확하게 보이기 위해 border설정 */
 .group1{
