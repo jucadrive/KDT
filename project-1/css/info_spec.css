@@ -97,6 +97,7 @@ span{
   margin: 0 5px;
   text-decoration: none;
   transition: all .5s;
+  cursor: pointer;
 }
 
 #quick_menu > a:hover {
