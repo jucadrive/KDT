@@ -24,4 +24,8 @@
     font-size: 40px;
 } 
 
+#container7 #image:hover {
+    filter: brightness(50%);
+}
+
 

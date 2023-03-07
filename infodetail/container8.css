@@ -4,10 +4,11 @@
     background-image:URL('porsche-container8.jpeg');
     background-position: center center;
     background-size: cover;
-    padding:2% 5%;
+    /* padding:2% 5%; */
     
-
 }
+
+
 /* 기본적으로 flex는 가로 한 줄로 정렬되기 때문에 세로로 정렬하고 싶으면 flex-direction을 세로로 지정하고
 justify-content로 지정해야한다.*/
 #container8 > main{
@@ -16,6 +17,8 @@ justify-content로 지정해야한다.*/
     justify-content:center;
     width:50%;
     height:100%;
+    padding:2% 5%; 
+    
 }
 #container8 .list{
     

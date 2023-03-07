@@ -23,3 +23,6 @@
     font-size: 40px;
 } 
 
+#container5 #image:hover {
+    filter: brightness(50%);
+}

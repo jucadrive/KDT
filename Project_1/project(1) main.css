@@ -1,21 +1,39 @@
-/* /* 
-html,
-body {
+li { list-style: none;}
+.slide_wrapper {
     position: relative;
-} */
-
-
-/* #img1 {
-    width: 100vw;
-    height: 100vh;
+    margin: 0 auto;
+    height: 853px;
+    overflow: hidden;
 }
-
-#img2 {
-    width: 100vw;
-    height: 100vh;
+.slides {
+    position: absolute;
+    left: 0; top: 0;
 }
-
-#img3 {
-    width: 100vw;
-    height: 100vh;
-} */
+.slides.animated {
+    transition: 0.5s ease-out;
+}
+.slides li {
+    overflow-y: hidden;
+    width: 1920px;
+    height: 900px;
+    float: left;
+}
+.prev, .next {
+    position: absolute;
+    color: red;
+    font-size: 40pt;
+    padding: 15px;
+    font-weight: bold;
+}
+.prev {
+    z-index: 500;
+    bottom: 350px;
+}
+.next {
+    z-index: 500;
+    top: 400px;
+    right: 0px;
+}
+img {
+    overflow: hidden;
+}
