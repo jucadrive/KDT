@@ -1,7 +1,9 @@
 #container3{
     width:99vw;
     height:100vh;
-    position: relative;}
+    position: relative;
+   
+}
 
 #container3 #image{
     width:100%;
@@ -10,7 +12,15 @@
     background-size: cover;
     background-position: center center;
     display:flex;
-    justify-content: center;}
+    justify-content: center;
+    
+}
+
+#container3 #image:hover {
+    filter: brightness(50%);
+}
+
+
 
 #container3 #text {
     position: absolute;
@@ -18,5 +28,10 @@
     left: 8%;
     font-size:50px;
     color:white;
-    font-weight: bold;
+    font-weight: bold;  
 }
+
+
+
+
+

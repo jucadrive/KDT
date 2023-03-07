@@ -1,6 +1,6 @@
 #container2 {
   width: 99vw;
-  height: 50vh;
+  height: 60vh;
   display: flex;
   background-color: black;
 }
@@ -12,7 +12,7 @@
 }
 #container2 .intro {
   color: white;
-  width: 35vw;
+  width: 40vw;
   padding: 0 30px;
   margin-right: 30px;
   margin-top: 50px;
