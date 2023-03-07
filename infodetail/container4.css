@@ -12,6 +12,10 @@
     display:flex;
     justify-content: center;
     margin-top: -120px;}
+
+#container4 #image:hover {
+        filter: brightness(50%);
+    }
     
 
 
@@ -39,6 +43,8 @@
     margin-left: -15px;
     font-weight: normal;
 }
+
+
 .title1:hover + .hr1{
     border: 1px solid red;
     animation-name: lineanimation;

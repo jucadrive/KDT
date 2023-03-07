@@ -19,11 +19,15 @@
     <link rel="stylesheet" href="container9.css">
     <link rel="stylesheet" href="container10.css">
     <link rel="stylesheet" href="container11.css">
+    <link rel="stylesheet" href="container12.css">
     <script src="model_info.js"></script>
     <script src="https://kit.fontawesome.com/ab37fbcfbd.js" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="container4.js"></script>
+    <script src="container3.js"></script>
+    
+    
     <style>
         
         /* container1_blur의 z-index=5 */
@@ -53,9 +57,59 @@
 </head>
 
 <body>
-    <div id="logo"><a href="mainURL"><img src="porsche-mark.jpeg"/></a></div>
-    <!-- 1페이지 -->
-    <div id="container1">
+    <div class="main">
+        <div id="header_box">
+          <div class="logo"></div>
+          <div class="menuBar">메뉴1</div>
+          <div class="menuBar">메뉴2</div>
+          <div class="menuBar">메뉴3</div>
+          <div class="menuBar">메뉴4</div>
+          <div class="menuBar">메뉴5</div>
+          <div class="menuBar">shop</div>
+          <div class="menuBar">포르쉐 센터 찾기</div>
+          <div class="menuBar">My Porsche</div>
+        </div>
+    
+        <div id="container1">
+          <div class="img">
+            <div id="upper_text_box">
+              <div class="body_type">
+                <p>All</p>
+                <p>Coupe</p>
+                <p>Cabriolet</p>
+                <p>Targa</p>
+              </div>
+              <div class="model_name">
+                <p>911 Carrera<br>
+                  <span>158,700,000KRW부터<sup>1 2</sup></span>
+                </p>
+              </div>
+            </div>
+            <div id="lower_text_box">
+              <div class="spec_intro">
+                <p class="spec">288kW/392PS <br><span>Power(kW)/Power(PS)</span></p>
+                <p class="spec">4.2s <br><span>Acceleration 0 - 100 km/h</span></p>
+                <p class="spec">293km/h <br><span>Top speed</span></p>
+              </div>
+              <div id="quick_menu">
+                <a class="click-modal">
+                  <div>〉 기술 사양</div>
+                </a>
+                <a href="#">
+                  <div>〉 나만의 포르쉐 만들기</div>
+                </a>
+                <a href="#">
+                  <div>〉 비교하기</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- <div id="logo"><a href="mainURL"><img src="porsche-mark.jpeg"/></a></div>
+     1페이지 -->
+    <!-- <div id="container1">
     <div id="container1_blur"></div>
     <header>
         <div id="list">
@@ -65,7 +119,7 @@
             <a href="#" id="list4">리스트4</a>
             <a href="#" id="list5">리스트5</a>
         </div>
-        <div id="menu"><a href="#" onmouseover="menuBarOn(600)" onclick="menuBarOff(600)">메뉴 ≡</a></div>
+        <div id="menu"><a class="btn" href="#" onmouseover="menuBarOn(600)" onclick="menuBarOff(600)">메뉴 ≡</a></div>
     </header>
     <main>
         <section>
@@ -78,11 +132,7 @@
         <div id="car_name">
             <p id="p2">911 Carrera</p>
         </div>
-        <div id="list_btn">
-            <div id="go_spec"><a href ="info_tech.html">기술 사양</a></div>
-            <div id="make_porsche"><a href ="#">나만의 포르쉐 만들기</a></div>
-            <div id="compare"><a href ="#">비교하기</a></div>
-        </div>
+        
         <div id="text_speed">
             <div id="power">
                 <p class="p1">288 kW/392 PS</p>
@@ -96,14 +146,23 @@
                 <p class="p1">293 km/h</p>
                 <p>Top speed</p>
             </div>
+        <div id="list_btn">
+            <div id="go_spec"><a href ="info_tech.html">기술 사양</a></div>
+            <div id="make_porsche"><a href ="#">나만의 포르쉐 만들기</a></div>
+            <div id="compare"><a href ="#">비교하기</a></div>
         </div>
-    </section>
+        </div>
+    </section> -->
     <!-- 메뉴 호버시 나오는 창 -->
-    <div id="menu_window">
+
+    
+    <!-- <div id="menu_window">
         <div style="width:100%; height:55%; border:1px red solid;
         display:flex; flex-direction: column; justify-content: space-around;">
-        <div style="width:100%;height:5%; text-align: right; margin: 20px 0px 0px -20px;"><a href="#" onclick="menuBarOff('#menu',600)">
-            <i class="fa-solid fa-x" style="color:black"></i></a></div>
+        <div style="width:100%;height:5%; text-align: right; margin: 20px 0px 0px -20px;">
+            <a href="#" onclick="menuBarOff('#menu',600)">
+            <i class="fa-solid fa-x" style="color:black"></i></a>
+        </div>
             <div id="menu_col">
                 <div id="menu_img"><img src="porsche2.jpg"/>5</div>
                 <div id="menu_img"><img src="porsche2.jpg"/>5</div>
@@ -115,11 +174,14 @@
             <div id="menu_col">
                 <div id="menu_img"><img src="porsche2.jpg"/>5</div>
                 <div id="menu_img"><img src="porsche2.jpg"/>5</div>
-            </div>6
+            </div>
         </div>
         <div style="width:100%; height:45%; border:1px red solid"></div>
-    </div>
-    </main>
+    </div> -->
+
+
+<!-- 
+    </main> -->
     
 <!-- 2페이지 -->
     <div id="container2">
@@ -151,8 +213,12 @@
 
     <div id="container3">
         <div id="image"></div>
-        <div id="text">전통과 현대의 조화 - 상징적인 플라이라인과
+
+           
+                     <div id="text">전통과 현대의 조화 - 상징적인 플라이라인과
             <br>라이트 스트립.</div>
+        
+              
     </div>
 
 <!-- 4페이지 -->
@@ -276,6 +342,7 @@
     <a href="g2-5.jpeg" target=_blank id= img5></a>
     <a href="g2-6.jpg" target=_blank id= img6></a>
 </div>
+
 <div id="container11">
     <!-- <div id="gallery">Porsche Gallery</div> -->
     <a href="g3-1.jpeg" target=_blank id= img1></a>
@@ -286,6 +353,22 @@
     <a href="g3-6.jpeg" target=_blank id= img6></a>
 
 </div>
+
+<div id="container12">
+    <p>
+    © 2023 Porsche Korea Ltd. Legal notice 개인정보처리방침 쿠키 정책 위치정보사업 이용약관 위치기반서비스 이용약관 포르쉐 그룹 부정비리 제보 시스템 Open Source Software Notice.<br>
+<br>
+포르쉐 고객센터 080-8100-911<br>
+<br>
+※ 표기된 연비는 표준 모드에 의한 것으로 도로상태, 운전방법, 차량적재, 정비상태 및 외기온도에 따라 실주행연비와 차이가 있습니다.<br>
+※ 본 웹사이트에 기재된 내용은 사전에 예고 없이 변경될 수 있으므로 실제 차량과 다를 수 있습니다.<br>
+※ 차량 이미지는 실제 모델과 다를 수 있으며, 국내 적용 사양 및 구성에 따라 차이가 있을 수 있습니다.<br>
+※ 국내 출시 이전 차량의 경우 국내 공인 연비 정보 및 타이어 에너지소비효율 정보가 존재하지 않을 수 있습니다.<br>
+※ 개별소비세 인하 관련 공지사항<br>
+포르쉐 코리아는 정부의 일시적 개별소비세 인하 정책에 따라 적용 대상 차량에 대해 개별소비세 감면 혜택을 적용합니다.<br>
+자세한 사항은 포르쉐 센터를 통하여 문의하시기 바랍니다.<br>
+※본 페이지에 기재된 차량 가격은 권장소비자가격(MSRP)으로, 선택 사양, 취득세, 운송료 및 기타 핸들링에 대한 비용은 포함하지 않으며 실제 판매 가격과 상이할 수 있습니다.<br>
+</p></div>
 
 </body>
 </html>
