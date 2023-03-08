@@ -54,18 +54,16 @@
             <aside>
                 <!-- 가격 띄우는 구역 -->
                 <div id="price">
-                    
+                    <div id="car_name_1">
+                        <txt id="car_name_1_1">911 Carrera Coupé</txt><i class="fa-sharp fa-solid fa-chevron-down" onclick=""></i>
+                    </div>
                     <div id="total_price">
-                        <p>Total price</p>
-                        <txt id="total_value">금액</txt> ₩
+                        <div style="display:flex; justify-content: space-between;"><txt>Total price</txt><txt style="font-size:20px;"id="total_value">금액 ₩</txt></div>
                     </div>
               
                     <div id="base_price">
-                        <p>Base price</p>
-                        <txt id="base_value">금액</txt> ₩
-                        <p>Price for equipment</p>
-                        <txt id="equip_value">금액</txt> ₩
-                        
+                        <div style="display:flex; justify-content: space-between;"><txt>Base price</txt><txt id="base_value" style="font-size: 16px;">금액 ₩</txt></div>
+                        <div style="display:flex; justify-content: space-between;"><txt>Price for equipment</txt><txt id="equip_value" style="font-size: 16px;">금액 ₩</txt></div>
                     </div>
                 </div>
                 <!-- 가격 밑 리스트 -->
@@ -81,23 +79,23 @@
                                 <div class="equip_val1"><txt id="title_value1">name</txt></div>
                                 <div class="equip_val2"><txt id="equip_value1">0 ₩</txt></div>
                                 <div class="mycar_option"  ><p>Standard Colour</p>
-                                   <div style="background-color: rgb(239, 239, 239);" title="white - 100,000 ₩" class="group1" type="button" id="i1" onclick="click_function(document.getElementById(this.id).className,this.id)" value="1000000"></div>
-                                   <div style="background-color: rgb(0, 0, 0);" title="black - 200,000 ₩" class="group1" type="button" id="i2" onclick="click_function(document.getElementById(this.id).className,this.id)" value="2000000"></div> 
-                                   <div style="background-color: rgb(255, 0, 0);" title="red - 300,000 ₩" class="group1" type="button" id="i3" onclick="click_function(document.getElementById(this.id).className,this.id)" value="3000000"></div> 
-                                   <div style="background-color: rgb(238, 214, 0);" title="yellow - 400,000 ₩" class="group1" type="button" id="i4" onclick="click_function(document.getElementById(this.id).className,this.id)" value="4000000"></div> 
+                                   <div style="background-color: rgb(239, 239, 239);" title="white - 100,000 ₩" class="group1" type="button" id="i1" onclick="click_function(this)" value="1000000"></div>
+                                   <div style="background-color: rgb(0, 0, 0);" title="black - 200,000 ₩" class="group1" type="button" id="i2" onclick="click_function(this)" value="2000000"></div> 
+                                   <div style="background-color: rgb(255, 0, 0);" title="red - 300,000 ₩" class="group1" type="button" id="i3" onclick="click_function(this)" value="3000000"></div> 
+                                   <div style="background-color: rgb(238, 214, 0);" title="yellow - 400,000 ₩" class="group1" type="button" id="i4" onclick="click_function(this)" value="4000000"></div> 
                                 </div>
                                 <div class="mycar_option"  ><p>Metallic Colour</p>
-                                    <div style="background-color: black;" title="Jet Black Metalic - 500,000 ₩" class="group1" type="button" id="i5" onclick="click_function(document.getElementById(this.id).className,this.id)" value="5000000"></div>
-                                    <div style="background-color: rgb(239,245,249);" title="Carrera White Metalic - 600,000 ₩" class="group1" type="button" id="i6" onclick="click_function(document.getElementById(this.id).className,this.id)" value="6000000"></div> 
-                                    <div style="background-color: rgb(0,25,75);" title="Gentian Blue Metalic - 700,000 ₩" class="group1" type="button" id="i7" onclick="click_function(document.getElementById(this.id).className,this.id)" value="7000000"></div> 
-                                    <div style="background-color: rgb(204,204,204);" title="GT Silver Metalic - 800,000 ₩" class="group1" type="button" id="i8" onclick="click_function(document.getElementById(this.id).className,this.id)" value="8000000"></div>
-                                    <div style="background-color: rgb(51,51,51);" title="Agate Grey Metalic - 900,000 ₩" class="group1" type="button" id="i9" onclick="click_function(document.getElementById(this.id).className,this.id)" value="9000000"></div> 
-                                    <div style="background-color: rgb(60,60,50);" title="Aventurine Green Metalic - 1,000,000 ₩" class="group1" type="button" id="i10" onclick="click_function(document.getElementById(this.id).className,this.id)" value="10000000"></div> 
+                                    <div style="background-color: black;" title="Jet Black Metalic - 500,000 ₩" class="group1" type="button" id="i5" onclick="click_function(this)" value="5000000"></div>
+                                    <div style="background-color: rgb(239,245,249);" title="Carrera White Metalic - 600,000 ₩" class="group1" type="button" id="i6" onclick="click_function(this)" value="6000000"></div> 
+                                    <div style="background-color: rgb(0,25,75);" title="Gentian Blue Metalic - 700,000 ₩" class="group1" type="button" id="i7" onclick="click_function(this)" value="7000000"></div> 
+                                    <div style="background-color: rgb(204,204,204);" title="GT Silver Metalic - 800,000 ₩" class="group1" type="button" id="i8" onclick="click_function(this)" value="8000000"></div>
+                                    <div style="background-color: rgb(51,51,51);" title="Agate Grey Metalic - 900,000 ₩" class="group1" type="button" id="i9" onclick="click_function(this)" value="9000000"></div> 
+                                    <div style="background-color: rgb(60,60,50);" title="Aventurine Green Metalic - 1,000,000 ₩" class="group1" type="button" id="i10" onclick="click_function(this)" value="10000000"></div> 
                                 </div>
                                 <div class="mycar_option"  ><p>Special Colour</p>
-                                    <div style="background-color: crimson;" title="red - 1,100,000 ₩" class="group1" type="button" id="i11" onclick="click_function(document.getElementById(this.id).className,this.id)" value="11000000"></div>
-                                    <div style="background-color: blue;" title="blue - 1,200,000 ₩" class="group1" type="button" id="i12" onclick="click_function(document.getElementById(this.id).className,this.id)" value="12000000"></div> 
-                                    <div style="background-color: greenyellow;" title="greenyellow - 1,300,000 ₩" class="group1" type="button" id="i13" onclick="click_function(document.getElementById(this.id).className,this.id)" value="13000000"></div> 
+                                    <div style="background-color: crimson;" title="red - 1,100,000 ₩" class="group1" type="button" id="i11" onclick="click_function(this)" value="11000000"></div>
+                                    <div style="background-color: blue;" title="blue - 1,200,000 ₩" class="group1" type="button" id="i12" onclick="click_function(this)" value="12000000"></div> 
+                                    <div style="background-color: greenyellow;" title="greenyellow - 1,300,000 ₩" class="group1" type="button" id="i13" onclick="click_function(this)" value="13000000"></div> 
                                 </div>              
                             </div>
                         </div>
@@ -109,9 +107,9 @@
                                 <div class="equip_val1"><txt id="title_value2">name</txt></div>
                                 <div class="equip_val2"><txt id="equip_value2">0 ₩</txt></div>
                                 <div class="mycar_option"  ><p>wheels</p>
-                                    <div title="20~21 inch Carrera Exclusive Design Wheel - 1,000,000 ₩" class="group2" type="button" id="i14" onclick="click_function(document.getElementById(this.id).className,this.id) " value="1000000"><img src="../../files/20~21 inch Carrera Exclusive Design Wheel.png"/></div>
-                                    <div title="21” Porsche Panamera Exclusive Design OEM Complete Wheel - 3,000,000 ₩" class="group2" type="button" id="i15" onclick="click_function(document.getElementById(this.id).className,this.id)" value="3000000"><img src="../../files/21” Porsche Panamera Exclusive Design OEM Complete Wheel.jpg"/></div> 
-                                    <div title="21” Porsche Macan 911 Turbo Design OEM Complete Wheel - 4,000,000 ₩" class="group2" type="button" id="i16" onclick="click_function(document.getElementById(this.id).className,this.id)" value="4000000"><img src="../../files/21” Porsche Macan 911 Turbo Design OEM Complete Wheel.jpg"/></div> 
+                                    <div title="20~21 inch Carrera Exclusive Design Wheel - 1,000,000 ₩" class="group2" type="button" id="i14" onclick="click_function(this) " value="1000000"><img src="../../files/20~21 inch Carrera Exclusive Design Wheel.png"/></div>
+                                    <div title="21” Porsche Panamera Exclusive Design OEM Complete Wheel - 3,000,000 ₩" class="group2" type="button" id="i15" onclick="click_function(this)" value="3000000"><img src="../../files/21” Porsche Panamera Exclusive Design OEM Complete Wheel.jpg"/></div> 
+                                    <div title="21” Porsche Macan 911 Turbo Design OEM Complete Wheel - 4,000,000 ₩" class="group2" type="button" id="i16" onclick="click_function(this)" value="4000000"><img src="../../files/21” Porsche Macan 911 Turbo Design OEM Complete Wheel.jpg"/></div> 
                                  </div>
                             </div>
                         </div>
@@ -122,9 +120,9 @@
                                 <div class="equip_val1"><txt id="title_value3">name</txt></div>
                                 <div class="equip_val2"><txt id="equip_value3">0 ₩</txt></div>
                                 <div class="mycar_option" ><p>wheels</p>    
-                                    <div style="background-color: crimson;" title="red - 1,100,000 ₩" class="group3" type="button" id="i17" onclick="click_function(document.getElementById(this.id).className,this.id)" value="11000000"></div>
-                                    <div style="background-color: blue;" title="blue - 1,200,000 ₩" class="group3" type="button" id="i18" onclick="click_function(document.getElementById(this.id).className,this.id)" value="12000000"></div> 
-                                    <div style="background-color: greenyellow;" title="greenyellow - 1,300,000 ₩" class="group3" type="button" id="i19" onclick="click_function(document.getElementById(this.id).className,this.id)" value="13000000"></div> 
+                                    <div style="background-color: crimson;" title="red - 1,100,000 ₩" class="group3" type="button" id="i17" onclick="click_function(this)" value="11000000"></div>
+                                    <div style="background-color: blue;" title="blue - 1,200,000 ₩" class="group3" type="button" id="i18" onclick="click_function(this)" value="12000000"></div> 
+                                    <div style="background-color: greenyellow;" title="greenyellow - 1,300,000 ₩" class="group3" type="button" id="i19" onclick="click_function(this)" value="13000000"></div> 
                                 </div>
                             </div>   
                         </div>
@@ -135,9 +133,9 @@
                                 <div class="equip_val1"><txt id="title_value4">name</txt></div>
                                 <div class="equip_val2"><txt id="equip_value4">0 ₩</txt></div>
                                 <div class="mycar_option" ><p>wheels</p>    
-                                    <div style="background-color: crimson;" title="red - 1,100,000 ₩" class="group4" type="button" id="i20" onclick="click_function(document.getElementById(this.id).className,this.id)" value="11000000"></div>
-                                    <div style="background-color: blue;" title="blue - 1,200,000 ₩" class="group4" type="button" id="i21" onclick="click_function(document.getElementById(this.id).className,this.id)" value="12000000"></div> 
-                                    <div style="background-color: greenyellow;" title="greenyellow - 1,300,000 ₩" class="group4" type="button" id="i22" onclick="click_function(document.getElementById(this.id).className,this.id)" value="13000000"></div>
+                                    <div style="background-color: crimson;" title="red - 1,100,000 ₩" class="group4" type="button" id="i20" onclick="click_function(this)" value="11000000"></div>
+                                    <div style="background-color: blue;" title="blue - 1,200,000 ₩" class="group4" type="button" id="i21" onclick="click_function(this)" value="12000000"></div> 
+                                    <div style="background-color: greenyellow;" title="greenyellow - 1,300,000 ₩" class="group4" type="button" id="i22" onclick="click_function(this)" value="13000000"></div>
                                 </div>
                             </div>
                         </div>
@@ -152,9 +150,9 @@
                                <div class="equip_val1"><txt id="title_value5">name</txt></div>
                                <div class="equip_val2"><txt id="equip_value5">0 ₩</txt></div>
                                <div class="mycar_option" ><p>Standard Interior / Partial Leather Seats</p>
-                                 <div style="background-color: black;" title="Standard interior in black - 0 ₩" class="group5" type="button" id="i23" onclick="click_function(document.getElementById(this.id).className,this.id) " value="0"></div>
-                                 <div style="background-color: rgb(51,51,51);" title="Standard interior in white - 0 ₩" class="group5" type="button" id="i24" onclick="click_function(document.getElementById(this.id).className,this.id)" value="0"></div> 
-                                 <div title="Partial leather interior in two_tone combination - 900,000 ₩" class="group5" type="button" id="i25" onclick="click_function(document.getElementById(this.id).className,this.id)" value="900000">
+                                 <div style="background-color: black;" title="Standard interior in black - 0 ₩" class="group5" type="button" id="i23" onclick="click_function(this) " value="0"></div>
+                                 <div style="background-color: rgb(51,51,51);" title="Standard interior in white - 0 ₩" class="group5" type="button" id="i24" onclick="click_function(this)" value="0"></div> 
+                                 <div title="Partial leather interior in two_tone combination - 900,000 ₩" class="group5" type="button" id="i25" onclick="click_function(this)" value="900000">
                                     <div style="background-color: rgb(0, 0, 0); width:100%; height:50%"></div>
                                     <div style="background-color: rgb(195,168,134);width:100%; height:50%;"></div>
                                  </div> 
@@ -168,9 +166,9 @@
                               <div class="equip_val1"><txt id="title_value6">name</txt></div>
                               <div class="equip_val2"><txt id="equip_value6">0 ₩</txt></div>
                               <div class="mycar_option"><p></p>
-                                 <div style="background-color: black;" title="Standard interior in black - 0 ₩" class="group6" type="button" id="i26" onclick="click_function(document.getElementById(this.id).className,this.id) " value="0"></div>
-                                 <div style="background-color: rgb(51,51,51);" title="Standard interior in white - 0 ₩" class="group6" type="button" id="i27" onclick="click_function(document.getElementById(this.id).className,this.id)" value="0"></div> 
-                                 <div title="Partial leather interior in two_tone combination - 900,000 ₩" class="group6" type="button" id="i28" onclick="click_function(document.getElementById(this.id).className,this.id)" value="900000">
+                                 <div style="background-color: black;" title="Standard interior in black - 0 ₩" class="group6" type="button" id="i26" onclick="click_function(this) " value="0"></div>
+                                 <div style="background-color: rgb(51,51,51);" title="Standard interior in white - 0 ₩" class="group6" type="button" id="i27" onclick="click_function(this)" value="0"></div> 
+                                 <div title="Partial leather interior in two_tone combination - 900,000 ₩" class="group6" type="button" id="i28" onclick="click_function(this)" value="900000">
                                     <div style="background-color: rgb(0, 0, 0); width:100%; height:50%"></div>
                                     <div style="background-color: rgb(195,168,134);width:100%; height:50%;"></div>
                                  </div> 
@@ -181,13 +179,13 @@
                            <div class="list_box" id="stiching" value="0" onclick="list_box_active(this.id)">Stiching and seat centres <i class="fa-sharp fa-solid fa-chevron-down"></i></div>
                            <!-- stiching and seat centres -->
                            <div id="stiching_box">
-                                 <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group7" id="i29" style="margin:0px 10px;" name="c1" onclick="click_function(document.getElementById(this.id).className,this.id)" value="4500000" type="checkbox"></div>Interior Trim Package with decorative Stitching in contrasting Colour
+                                 <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group7" id="i29" style="margin:0px 10px;" name="c1" onclick="click_function(this)" value="4500000" type="checkbox"></div>Interior Trim Package with decorative Stitching in contrasting Colour
                                         <div class="equip_val2">4,500,000 ₩</div>
                                  </div>
-                                 <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group7" id="i30" style="margin:0px 10px;" name="c1" onclick="click_function(document.getElementById(this.id).className,this.id)" value="1200000" type="checkbox"></div>Seat Centres Leather in contrasting Colour
+                                 <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group7" id="i30" style="margin:0px 10px;" name="c1" onclick="click_function(this)" value="1200000" type="checkbox"></div>Seat Centres Leather in contrasting Colour
                                         <div class="equip_val2">1,200,000 ₩</div>
                                  </div>
-                                 <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group7" id="i31" style="margin:0px 10px;" name="c1" onclick="click_function(document.getElementById(this.id).className,this.id)" value="5600000" type="checkbox"></div>Interior Trim Package with decorative Stitching and Seat Centres Leather in contrasting Colour
+                                 <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group7" id="i31" style="margin:0px 10px;" name="c1" onclick="click_function(this)" value="5600000" type="checkbox"></div>Interior Trim Package with decorative Stitching and Seat Centres Leather in contrasting Colour
                                         <div class="equip_val2">5,600,000 ₩</div>
                                  </div>
                             </div>
@@ -200,13 +198,13 @@
                            <div class="list_box" id="epuipment_packages" value="0" onclick="list_box_active(this.id)">Equipment Packages <i class="fa-sharp fa-solid fa-chevron-down"></i></div>
                            <!-- equipment packages -->
                            <div id="epuipment_packages_box">
-                                 <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group8" id="i32" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="19500000" type="checkbox"></div>Heritage Design Package Classic
+                                 <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group8" id="i32" style="margin:0px 10px;" onclick="click_function(this)" value="19500000" type="checkbox"></div>Heritage Design Package Classic
                                         <div class="equip_val2">19,500,000 ₩</div>
                                  </div>
-                                 <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group8" id="i33" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="19500000" type="checkbox"></div>Heritage Design Package Pure
+                                 <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group8" id="i33" style="margin:0px 10px;" onclick="click_function(this)" value="19500000" type="checkbox"></div>Heritage Design Package Pure
                                         <div class="equip_val2">19,500,000 ₩</div>
                                  </div>
-                                 <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group8" id="i34" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="22100000" type="checkbox"></div>Leather Interior Exclusive Manufaktur
+                                 <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group8" id="i34" style="margin:0px 10px;" onclick="click_function(this)" value="22100000" type="checkbox"></div>Leather Interior Exclusive Manufaktur
                                         <div class="equip_val2">22,100,000 ₩</div>
                                  </div>
                            </div>
@@ -215,22 +213,22 @@
                            <div class="list_box" id="exterior" value="0" onclick="list_box_active(this.id)">Exterior <i class="fa-sharp fa-solid fa-chevron-down"></i></div>
                            <!-- exterior -->
                            <div id="exterior_box">
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group9" id="i35" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="2600000" type="checkbox"></div>Electric slide/tilt sunroof
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group9" id="i35" style="margin:0px 10px;" onclick="click_function(this)" value="2600000" type="checkbox"></div>Electric slide/tilt sunroof
                                     <div class="equip_val2">2,600,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group9" id="i36" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="3300000" type="checkbox"></div>Electric slide/tilt glass sunroof
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group9" id="i36" style="margin:0px 10px;" onclick="click_function(this)" value="3300000" type="checkbox"></div>Electric slide/tilt glass sunroof
                                     <div class="equip_val2">3,300,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group9" id="i37" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="5200000" type="checkbox"></div>Lightweight Roof Carbon
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group9" id="i37" style="margin:0px 10px;" onclick="click_function(this)" value="5200000" type="checkbox"></div>Lightweight Roof Carbon
                                     <div class="equip_val2">5,200,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group9" id="i38" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="8300000" type="checkbox"></div>Aerokit
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group9" id="i38" style="margin:0px 10px;" onclick="click_function(this)" value="8300000" type="checkbox"></div>Aerokit
                                     <div class="equip_val2">8,300,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group9" id="i39" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="10500000" type="checkbox"></div>SportDesign Package
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group9" id="i39" style="margin:0px 10px;" onclick="click_function(this)" value="10500000" type="checkbox"></div>SportDesign Package
                                     <div class="equip_val2">10,500,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group9" id="i40" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="200000" type="checkbox"></div>‘PORSCHE’ Logo LED Door Courtesy Lights
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group9" id="i40" style="margin:0px 10px;" onclick="click_function(this)" value="200000" type="checkbox"></div>‘PORSCHE’ Logo LED Door Courtesy Lights
                                     <div class="equip_val2">200,000 ₩</div>
                                 </div>
                            </div>
@@ -239,7 +237,7 @@
                            <div class="list_box" id="chassis" value="0" onclick="list_box_active(this.id)">Drive train / Chassis <i class="fa-sharp fa-solid fa-chevron-down"></i></div>
                            <!-- drive train / chasis -->
                            <div id="chassis_box">
-                              <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group10" id="i41" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="0" type="checkbox"></div>8-speed Porsche Doppelkupplung (PDK)
+                              <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group10" id="i41" style="margin:0px 10px;" onclick="click_function(this)" value="0" type="checkbox"></div>8-speed Porsche Doppelkupplung (PDK)
                                 <div class="equip_val2">0 ₩</div>
                               </div>
                            </div>
@@ -248,22 +246,22 @@
                             <div class="list_box" id="lightVision" value="0" onclick="list_box_active(this.id)">Light and vision <i class="fa-sharp fa-solid fa-chevron-down"></i></div>
                             <!-- light and vision -->
                             <div id="lightVision_box">
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group11" id="i42" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="2600000" type="checkbox"></div>LED Main Headlights including Porsche Dynamic Light System Plus (PDLS Plus)
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group11" id="i42" style="margin:0px 10px;" onclick="click_function(this)" value="2600000" type="checkbox"></div>LED Main Headlights including Porsche Dynamic Light System Plus (PDLS Plus)
                                     <div class="equip_val2">1,400,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group11" id="i43" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="3300000" type="checkbox"></div>Tinted LED Main Headlights with Matrix Beam including Porsche Dynamic Light System Plus (PDLS Plus) 
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group11" id="i43" style="margin:0px 10px;" onclick="click_function(this)" value="3300000" type="checkbox"></div>Tinted LED Main Headlights with Matrix Beam including Porsche Dynamic Light System Plus (PDLS Plus) 
                                     <div class="equip_val2">4,200,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group11" id="i44" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="5200000" type="checkbox"></div>LED Matrix main headlights incl. Porsche Dynamic Light System Plus (PDLS Plus)
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group11" id="i44" style="margin:0px 10px;" onclick="click_function(this)" value="5200000" type="checkbox"></div>LED Matrix main headlights incl. Porsche Dynamic Light System Plus (PDLS Plus)
                                     <div class="equip_val2">5,200,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group11" id="i45" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="8300000" type="checkbox"></div>Exclusive Design Taillights
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group11" id="i45" style="margin:0px 10px;" onclick="click_function(this)" value="8300000" type="checkbox"></div>Exclusive Design Taillights
                                     <div class="equip_val2">1,200,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group11" id="i46" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="10500000" type="checkbox"></div>Rear wiper
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group11" id="i46" style="margin:0px 10px;" onclick="click_function(this)" value="10500000" type="checkbox"></div>Rear wiper
                                     <div class="equip_val2">500,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group11" id="i47" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="200000" type="checkbox"></div>Lightweight and noise insulated glass
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group11" id="i47" style="margin:0px 10px;" onclick="click_function(this)" value="200000" type="checkbox"></div>Lightweight and noise insulated glass
                                     <div class="equip_val2">1,900,000 ₩</div>
                                 </div>
                             </div>
@@ -272,22 +270,22 @@
                             <div class="list_box" id="comfortAssistance" value="0" onclick="list_box_active(this.id)">Comfort and assistance systems <i class="fa-sharp fa-solid fa-chevron-down"></i></div>
                             <!-- comfort ans assistance systems -->
                             <div id="comfortAssistance_box">
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group12" id="i48" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="1500000" type="checkbox"></div>ParkAssist incl. Surround View
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group12" id="i48" style="margin:0px 10px;" onclick="click_function(this)" value="1500000" type="checkbox"></div>ParkAssist incl. Surround View
                                     <div class="equip_val2">1,500,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group12" id="i49" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="3400000" type="checkbox"></div>Night View Assist
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group12" id="i49" style="margin:0px 10px;" onclick="click_function(this)" value="3400000" type="checkbox"></div>Night View Assist
                                     <div class="equip_val2">3,400,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group12" id="i50" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="1200000" type="checkbox"></div>Lane Change Assist
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group12" id="i50" style="margin:0px 10px;" onclick="click_function(this)" value="1200000" type="checkbox"></div>Lane Change Assist
                                     <div class="equip_val2">1,200,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group12" id="i51" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="2500000" type="checkbox"></div>Adaptive cruise control
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group12" id="i51" style="margin:0px 10px;" onclick="click_function(this)" value="2500000" type="checkbox"></div>Adaptive cruise control
                                     <div class="equip_val2">2,500,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group12" id="i52" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="2700000" type="checkbox"></div>Active Lane Keeping incl. Adaptive Cruise Control
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group12" id="i52" style="margin:0px 10px;" onclick="click_function(this)" value="2700000" type="checkbox"></div>Active Lane Keeping incl. Adaptive Cruise Control
                                     <div class="equip_val2">2,700,000 ₩</div>
                                 </div>
-                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group12" id="i53" style="margin:0px 10px;" onclick="click_function(document.getElementById(this.id).className,this.id)" value="200000" type="checkbox"></div>Preparation for Porsche Dashcam
+                                <div class="mycar_option"><div style="width:40px; height:60px; float:left;"><input class="group12" id="i53" style="margin:0px 10px;" onclick="click_function(this)" value="200000" type="checkbox"></div>Preparation for Porsche Dashcam
                                     <div class="equip_val2">200,000 ₩</div>
                                 </div>
                             </div>
@@ -303,9 +301,9 @@
                                  <div class="equip_val1"><txt >name</txt></div>
                                  <div class="equip_val2"><txt >0 ₩</txt></div>
                                  <div class="mycar_option" ><p>Standard Interior / Partial Leather Seats</p>
-                                    <div style="background-color: black;" title="Standard interior in black - 0 ₩" class="group13" type="button" id="i54" onclick="click_function(document.getElementById(this.id).className,this.id) " value="0"></div>
-                                    <div style="background-color: rgb(51,51,51);" title="Standard interior in white - 0 ₩" class="group13" type="button" id="i55" onclick="click_function(document.getElementById(this.id).className,this.id)" value="0"></div> 
-                                    <div title="Partial leather interior in two_tone combination - 900,000 ₩" class="group13" type="button" id="i56" onclick="click_function(document.getElementById(this.id).className,this.id)" value="900000">
+                                    <div style="background-color: black;" title="Standard interior in black - 0 ₩" class="group13" type="button" id="i54" onclick="click_function(this) " value="0"></div>
+                                    <div style="background-color: rgb(51,51,51);" title="Standard interior in white - 0 ₩" class="group13" type="button" id="i55" onclick="click_function(this)" value="0"></div> 
+                                    <div title="Partial leather interior in two_tone combination - 900,000 ₩" class="group13" type="button" id="i56" onclick="click_function(this)" value="900000">
                                        <div style="background-color: rgb(0, 0, 0); width:100%; height:50%"></div>
                                        <div style="background-color: rgb(195,168,134);width:100%; height:50%;"></div>
                                     </div> 
@@ -319,9 +317,9 @@
                                  <div class="equip_val1"><txt >name</txt></div>
                                  <div class="equip_val2"><txt >0 ₩</txt></div>
                                  <div class="mycar_option" ><p>Standard Interior / Partial Leather Seats</p>
-                                    <div style="background-color: black;" title="Standard interior in black - 0 ₩" class="group14" type="button" id="i57" onclick="click_function(document.getElementById(this.id).className,this.id) " value="0"></div>
-                                    <div style="background-color: rgb(51,51,51);" title="Standard interior in white - 0 ₩" class="group14" type="button" id="i58" onclick="click_function(document.getElementById(this.id).className,this.id)" value="0"></div> 
-                                    <div title="Partial leather interior in two_tone combination - 900,000 ₩" class="group14" type="button" id="i59" onclick="click_function(document.getElementById(this.id).className,this.id)" value="900000">
+                                    <div style="background-color: black;" title="Standard interior in black - 0 ₩" class="group14" type="button" id="i57" onclick="click_function(this) " value="0"></div>
+                                    <div style="background-color: rgb(51,51,51);" title="Standard interior in white - 0 ₩" class="group14" type="button" id="i58" onclick="click_function(this)" value="0"></div> 
+                                    <div title="Partial leather interior in two_tone combination - 900,000 ₩" class="group14" type="button" id="i59" onclick="click_function(this)" value="900000">
                                        <div style="background-color: rgb(0, 0, 0); width:100%; height:50%"></div>
                                        <div style="background-color: rgb(195,168,134);width:100%; height:50%;"></div>
                                     </div> 

@@ -14,18 +14,15 @@ for(var i=0; i<6;i++){
 for(var i=0; i<6;i++){
   title_value_arr[i]=document.getElementById(`title_value${i+1}`);
 }
-// 클릭시 커지는 효과
 
-var switch1="off";
-var option_style=0;
-var count=[];
-for(var i=0;i<20;i++){
-  count[i]=0;
-}
 
 //메인 함수
-function click_function(class_name, id){
- 
+function click_function(self){
+
+    let id=self.id
+    let class_name=document.getElementById(self.id).className
+    let name = document.getElementsByName(self.name)
+    checkOnlyOne(name)
     equipTotal(class_name, id);
     equip_value_arr_text();
     if(class_name =="group1"||class_name =="group2"||class_name =="group3"
@@ -42,6 +39,10 @@ function click_function(class_name, id){
 
 
 //목록 누를때 옵션칸이 내려왔다 올라왔다 하는 기능
+var count=[];
+for(var i=0;i<20;i++){
+  count[i]=0;
+}
 function list_box_active(ID){
   // attr 속성으로 value값을 불러오면 기본적으로 문자형이기 때문에
   // number함수로 숫자로 바꿔준다.
@@ -91,16 +92,16 @@ function equipTotal(class_name, id){
   let total_value=document.getElementById("total_value");
  
   // price for equip 표시
-  equip_value.innerText=sum;
+  equip_value.innerText=sum + " ₩";
   // total price 표시
-  total_value.innerText=Number(base_value.innerText) + sum;
+  total_value.innerText=170000000 + sum +" ₩";
 }
 
   
 // 기본 요금
 function base_price(){
       let base_value=document.getElementById("base_value");
-      base_value.innerText=100000000;
+      base_value.innerText=170000000 + " ₩";
   }
 
 
@@ -183,13 +184,13 @@ let Scroll_changePicture = () => {
 function checkOnlyOne(name) {
   
   const checkboxes 
-      = document.getElementsByName(name.id);
+      = name
   
   checkboxes.forEach((cb) => {
     cb.checked = false;
   })
   
-  id.checked = true;
+  name.checked = true;
 
 }
 // querySelectorAll(css)는 주어진 css 선택자에 대응하는 요소 전부 반환
