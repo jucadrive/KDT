@@ -26,9 +26,16 @@
     <script src="https://kit.fontawesome.com/ab37fbcfbd.js" crossorigin="anonymous"></script>
     <script src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<<<<<<< HEAD:infodetail/model_info(혜연).html
+    <script src="container4.js"></script>
+    <script src="container3.js"></script>
+    <script src="container5.js"></script>
+    <script src="spec.js"></script>
+=======
     <script src="../js/container4.js"></script>
     <script src="../js/container3.js"></script>
     <script src="../js/spec.js"></script>
+>>>>>>> 598875116ea00e0b6ab95cd47d35eb33f41a110e:first_project/html/model_info(혜연).html
     
     
     <style>
@@ -59,7 +66,7 @@
     </style>
 </head>
 
-<body>
+<body onload="showImage()">
     
         <div id="header_box">
           <a href="main_page.html" class="logo"><div></div></a>
@@ -180,13 +187,21 @@
        
     </div>
     <!-- 5페이지 -->
-    <div id="container5">
+     <div id="container5">
+      <img id="introimg" border="0">
+      <div id="text">
+      인테리어 시대를 초월하는 디자인, 스포티한 캐릭터,<br>
+      인체 공학적 설계: GT 스포츠 스티어링 휠, 인스트루<br>
+      먼트 클러스터 및 스포츠 시트 플러스가 포함된 콕핏.</div>
+      </div>  
+
+    <!-- <div id="container5">
         <div id="image"></div>
         <div id="text">
         인테리어 시대를 초월하는 디자인, 스포티한 캐릭터,<br>
         인체 공학적 설계: GT 스포츠 스티어링 휠, 인스트루<br>
         먼트 클러스터 및 스포츠 시트 플러스가 포함된 콕핏.</div>
-    </div>  
+    </div>   -->
 
 <!-- 6페이지 -->
     <div id="container6">
@@ -248,8 +263,53 @@
  
   <!-- 9페이지 갤러리  --> 
 
+  <div class="container">
+    <div class="slide-container">
+        <div class="slide" id="container9">
+          <p id="gallery">Gallery</p>
+            <div class="grid">
+              
+                <a href="g_img1.jpeg" target=_blank id=img1></a>
+                <a href="g_img2.jpeg" target=_blank id=img2></a>
+                <a href="g_img3.jpeg" target=_blank id=img3></a>
+                <a href="g_img4.jpeg" target=_blank id=img4></a>
+                <a href="g_img5.jpeg" target=_blank id=img5></a>
+                <a href="g_img6.jpeg" target=_blank id=img6></a>
+            </div>
+        </div>
+        <div class="slide" id="container10">
+          <p id="gallery">Gallery</p>
+            <div class="grid">
+                <a href="g2-3.jpeg" target=_blank id=img1></a>
+                <a href="g2-2.jpeg" target=_blank id=img2></a>
+                <a href="g2-1.jpeg" target=_blank id=img3></a>
+                <a href="g2-4.jpeg" target=_blank id=img4></a>
+                <a href="g2-5.jpeg" target=_blank id=img5></a>
+                <a href="g2-6.jpg" target=_blank id=img6></a>
+            </div>
+        </div>
+        <div class="slide" id="container11">
+          <p id="gallery">Gallery</p>
+            <div class="grid">
+                <a href="g3-1.jpeg" target=_blank id=img1></a>
+                <a href="g3-2.jpeg" target=_blank id=img2></a>
+                <a href="g3-3.jpeg" target=_blank id=img3></a>
+                <a href="g3-4.jpg" target=_blank id=img4></a>
+                <a href="g3-5.jpeg" target=_blank id=img5></a>
+                <a href="g3-6.jpeg" target=_blank id=img6></a>
+            </div>
+        </div>
+    </div>
+    <a href="" id="prev"><i class="fa-solid fa-arrow-left"></i></a>
+    <a href="" id="next"><i class="fa-solid fa-arrow-right"></i></a>
+</div>
 
-<div id="container9">
+<script src="container9.js"></script>
+
+
+
+
+<!-- <div id="container9">
     <div id="gallery">Porsche Gallery</div>
     <a href="../img/g_img1.jpeg" target=_blank id= img1></a>
     <a href="../img/g_img2.jpeg" target=_blank id= img2></a>
@@ -260,6 +320,25 @@
 </div>
 
 <div id="container10">
+<<<<<<< HEAD:infodetail/model_info(혜연).html
+    
+    <a href="g2-3.jpeg" target=_blank id= img1></a>
+    <a href="g2-2.jpeg" target=_blank id= img2></a>
+    <a href="g2-1.jpeg" target=_blank id= img3></a>
+    <a href="g2-4.jpeg" target=_blank id= img4></a>
+    <a href="g2-5.jpeg" target=_blank id= img5></a>
+    <a href="g2-6.jpg" target=_blank id= img6></a>
+</div>
+
+<div id="container11">
+    
+    <a href="g3-1.jpeg" target=_blank id= img1></a>
+    <a href="g3-2.jpeg" target=_blank id= img2></a>
+    <a href="g3-3.jpeg" target=_blank id= img3></a>
+    <a href="g3-4.jpg" target=_blank id= img4></a>
+    <a href="g3-5.jpeg" target=_blank id= img5></a>
+    <a href="g3-6.jpeg" target=_blank id= img6></a>
+=======
     <!-- <div id="gallery">Porsche Gallery</div> -->
     <a href="../img/g2-3.jpeg" target=_blank id= img1></a>
     <a href="../img/g2-2.jpeg" target=_blank id= img2></a>
@@ -277,8 +356,9 @@
     <a href="../img/g3-4.jpg" target=_blank id= img4></a>
     <a href="../img/g3-5.jpeg" target=_blank id= img5></a>
     <a href="../img/g3-6.jpeg" target=_blank id= img6></a>
+>>>>>>> 598875116ea00e0b6ab95cd47d35eb33f41a110e:first_project/html/model_info(혜연).html
 
-</div>
+</div> -->
 
 <div id="container12">
     <p>
