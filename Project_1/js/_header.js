@@ -1,2 +1,0 @@
-innertext
-hover 시
