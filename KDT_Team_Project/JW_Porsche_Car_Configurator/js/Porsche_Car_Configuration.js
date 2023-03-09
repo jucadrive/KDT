@@ -199,11 +199,11 @@ let option_indecator = () => {
       if (scroll1_y <= 200) {
 
         car_image = document.getElementById("car_image");
-        car_image.innerHTML = "<img src=../../files/interior1.jpeg>"
+        car_image.innerHTML = "<img src=../img/interior1.jpeg>"
 
       }
       if(scroll1_y > 200) {
-        car_image.innerHTML = "<img src=../../files/porsche7.jpg>"
+        car_image.innerHTML = "<img src=../img/porsche7.jpg>"
       }
       if (scroll1_y <= 200) {
         $('#scroll1_div').css({
@@ -244,11 +244,11 @@ let option_indecator = () => {
       if (scroll1_y <= 700) {
 
         car_image = document.getElementById("car_image");
-        car_image.innerHTML = "<img src=../../files/interior1.jpeg>"
+        car_image.innerHTML = "<img src=../img/interior1.jpeg>"
 
       }
       else {
-        car_image.innerHTML = "<img src=../../files/porsche7.jpg>"
+        car_image.innerHTML = "<img src=../img/porsche7.jpg>"
       }
       if (scroll1_y <= 700) {
         $('#scroll1_div').css({
