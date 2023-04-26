@@ -96,6 +96,18 @@ section.s1 .signup-form1 .inner .allow-form > .material-icons {
   margin: 20px 10px 0 0;
   cursor: pointer;
 }
+section.s1 .signup-form1 .inner .allow-form > .allow-all > .material-icons {
+  font-size: 20px;
+  color: gray;
+  border: 2px solid gray;
+  border-radius: 50%;
+  margin: 10px;
+  cursor: pointer;
+}
+section.s1 .signup-form1 .inner .allow-form > .allow-all > .material-icons.select {
+  color: #E6007E;
+  border: 2px solid #E6007E;
+}
 section.s1 .signup-form1 .inner .allow-form > span {
   font-size: 20px;
 }
@@ -124,6 +136,10 @@ section.s1 .signup-form1 .inner .allow-form .TOS ul > li > .material-icons {
   border-radius: 50%;
   margin: 10px;
   cursor: pointer;
+}
+section.s1 .signup-form1 .inner .allow-form .TOS ul > li > .material-icons.select {
+  color: #E6007E;
+  border: 2px solid #E6007E;
 }
 .next .next-btn {
   width: 40%;
