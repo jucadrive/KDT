@@ -1,0 +1,156 @@
+* {
+  /* font-family: 'Jua'; */
+}
+a {
+  color: gray;
+}
+.middle-area {
+ height: 1000px;
+ margin-top: 60px;
+}
+.middle-area .inner {
+  max-width: 1440px;
+  position: relative;
+  margin: 0 auto;
+  height: 700px;
+}
+.middle-area .inner .login-form {
+  position: absolute;
+  top: 130px;
+  left: 0;
+  right: 0;
+  border: 1px solid #E6007E;
+  width: 50%;
+  height: 700px;
+  margin: auto;
+  border-radius: 30px;
+  box-shadow: 1px 1px 10px #E6007E;
+}
+.middle-area .inner h1 {
+  width: 250px;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: #111;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100px;
+  margin: auto;
+}
+.middle-area > .inner .userInfo {
+  width: 70%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 180px;
+  margin: auto;
+  font-size: 20px;
+  font-weight: 700;
+}
+.middle-area > .inner .userInfo li {
+  margin: 20px 0;
+}
+.middle-area > .inner .userInfo li > p {
+  margin-bottom: 10px;
+}
+.middle-area > .inner .userInfo li input {
+  width: 100%;
+  height: 55px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  font-size: 18px;
+  text-indent: 8px;
+}
+.middle-area .inner .login-btn {
+  width: 70%;
+  height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: #E6007E;
+  color: white;
+  box-shadow: 2px 2px 10px #E6007E;
+  font-size: 22px;
+  font-weight: 800;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 230px;
+  margin: auto;
+  cursor: pointer;
+  transition: all .3s;
+}
+.middle-area .inner .login-btn:hover {
+  box-shadow: 0 0 0;
+}
+
+.middle-area .inner .login-form .seperator {
+  width: 100%;
+  color: gray;
+  text-align: center;
+  position: absolute;
+  bottom: 180px;
+}
+.middle-area .inner .login-form .seperator::before {
+  content: '';
+  width: 30%;
+  height: .5px;
+  background-color: gray;
+  position: absolute;
+  left: 110px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+}
+.middle-area .inner .login-form .seperator::after {
+  content: '';
+  width: 30%;
+  height: .5px;
+  background-color: gray;
+  position: absolute;
+  right: 110px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.middle-area .inner .login-btn-google {
+  width: 70%;
+  height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: royalblue;
+  color: white;
+  box-shadow: 2px 2px 10px royalblue;
+  font-size: 22px;
+  font-weight: 800;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 115px;
+  margin: auto;
+  cursor: pointer;
+  transition: all .3s;
+}
+.middle-area .inner .login-btn-google:hover {
+  box-shadow: 0 0 0;
+}
+.middle-area .inner .sign-up-btn {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  position: absolute;
+  bottom: 70px;
+}
+.middle-area .inner .forget-id-pw {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  position: absolute;
+  bottom: 30px;
+}
