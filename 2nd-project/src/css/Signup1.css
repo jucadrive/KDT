@@ -156,3 +156,10 @@ input[type='checkbox']:checked {
     background-repeat: no-repeat;
     background-color: #E6007E;
 }
+.TOS ul li p {
+  cursor: pointer;
+  transition: all .3s;
+}
+.TOS ul li p:hover  {
+  color: #E6007E;
+}

@@ -4,7 +4,7 @@ footer {
   color: lightgray;
 }
 .outro {
-  height: 25vh;
+  /* height: 25vh; */
   background-color: #272727;
   color: white;
 }
@@ -22,10 +22,10 @@ footer {
   margin-bottom: 15px;
 }
 .outro .inner .intro li {
-  position: relative;
+  /* position: relative; */
   padding: 16px 15px;
 }
-.outro .inner .intro li::before {
+/* .outro .inner .intro li::before {
   content: "";
   width: 1px;
   height: 12px;
@@ -38,7 +38,7 @@ footer {
 }
 .outro .inner .intro li:first-child::before{
   display: none;
-}
+} */
 
 .outro .inner .adress {
   
@@ -53,10 +53,10 @@ footer {
   font-size: 12px;
 }
 .outro .inner .tel li {
-  position: relative;
+  /* position: relative; */
   padding: 0 10px;
 }
-.outro .inner .tel li::before {
+/* .outro .inner .tel li::before {
   content: '';
   background-color: white;
   width: 1px;
@@ -69,4 +69,4 @@ footer {
 }
 .outro .inner .tel li:first-child::before {
   display: none;
-}
+} */

@@ -1,15 +1,21 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../css/Signup1.css'
 import { useNavigate } from 'react-router-dom'
+import Button  from './Button';
+import Dialog1 from './Dialog1';
+import Dialog2 from './Dialog2';
+
 
 
 
 function Signup1() {
   let navigate = useNavigate();
   const checkboxInput = useRef([]);
-  console.log(checkboxInput.current)
+  const titleRef = useRef([]);
+  // console.log(titleRef.current[0].id)
+
   
- 
+  
   
   // 체크 아이템을 담을 배열
   const [checkItems, setCheckItems] = useState([]);
@@ -44,19 +50,36 @@ function Signup1() {
     }
   }
 
- 
+  
 
   const handleNextPage = () => {
-    if(checkboxInput.current[0].checked == true && checkboxInput.current[1].checked == true) {
+    if(checkboxInput.current[0].checked && checkboxInput.current[1].checked) {
      navigate('/signup/2')
     }else {
       alert('다 체크해')
     }
   }
 
+  const [dialog, setDialog] = useState(false);
+  const onClick = () => {
+    setDialog(true);
+    if(titleRef.current.id == data[0].id) {
+    <Dialog1 title='서비스 이용약관' confirmText='확인' onConfirm={onConfirm} visible={dialog}></Dialog1>
+      
+    }else if(titleRef.current.id == data[1].id) {
+      return (<Dialog2 title='개인정보활용동의서' confirmText='확인' onConfirm={onConfirm} visible={dialog}></Dialog2>)
+    }
+  };
+  const onConfirm = () => {
+    console.log('확인');
+    setDialog(false);
+  }
   
+  
+
   
   return (
+    <>
     <section className='s1'>
       <div className='signup-form1'>
         <div className='inner'>
@@ -91,7 +114,15 @@ function Signup1() {
                     }}
                     />
                     
-                    <p>{data.title}</p>
+                    <p 
+                    id={data.id}
+                    onClick={onClick}
+                    ref={(el) => {
+                      titleRef.current[key] = el
+                    }}
+                    >
+                      {data.title}
+                    </p>
                   </li>
                 ))}
               </ul>
@@ -100,9 +131,12 @@ function Signup1() {
            <button className='next-btn' onClick={handleNextPage}>동의 및 다음</button>
             </div>
           </div>
+          {/* <Dialog2 title='서비스 이용약관' confirmText='확인' onConfirm={onConfirm} visible={dialog}></Dialog2> */}
         </div>
+      
       </div>
     </section>
+    </>
 
     
   )
