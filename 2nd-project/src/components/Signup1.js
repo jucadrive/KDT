@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import Button  from './Button';
 import Dialog1 from './Dialog1';
 import Dialog2 from './Dialog2';
+import Dialog3 from './Dialog3';
+import Dialog4 from './Dialog4';
 
 
 
@@ -22,10 +24,10 @@ function Signup1() {
 
   // 화면에 출력할 내용
   const data = [
-    {id: 0, title: '이용약관 (필수)'},
-    {id: 1, title: '개인정보 . 수집 (필수)'},
-    {id: 2, title: '개인정보 제3자 제공 안내 (선택)'},
-    {id: 3, title: '광고성 정보 수신 (선택)'}
+    {id: 0, title: '이용약관 (필수)', component: Dialog1, head: '■주카 서비스 이용약관'},
+    {id: 1, title: '개인정보 . 수집 (필수)', component: Dialog2, head: '[개인정보활용동의서]'},
+    {id: 2, title: '개인정보 제3자 제공 안내 (선택)', component: Dialog3, head: ''},
+    {id: 3, title: '광고성 정보 수신 (선택)', component: Dialog4, head: '[마케팅 활용 및 광고성 정보 수신]'}
   ]
 
   // 체크 박스 전체 선택
@@ -60,20 +62,37 @@ function Signup1() {
     }
   }
 
-  const [dialog, setDialog] = useState(false);
-  const onClick = () => {
-    setDialog(true);
-    if(titleRef.current.id == data[0].id) {
-    <Dialog1 title='서비스 이용약관' confirmText='확인' onConfirm={onConfirm} visible={dialog}></Dialog1>
-      
-    }else if(titleRef.current.id == data[1].id) {
-      return (<Dialog2 title='개인정보활용동의서' confirmText='확인' onConfirm={onConfirm} visible={dialog}></Dialog2>)
-    }
-  };
-  const onConfirm = () => {
-    console.log('확인');
-    setDialog(false);
-  }
+  
+
+  const [selectedDialogIndex, setSelectedDialogIndex] = useState(null);
+  const [showDialog1, setShowDialog1] = useState(false);
+  const [showDialog2, setShowDialog2] = useState(false);
+  const [showDialog3, setShowDialog3] = useState(false);
+  const [showDialog4, setShowDialog4] = useState(false);
+
+  const handleDialogClick = (index) => {
+      setSelectedDialogIndex(index);
+      switch(index) {
+        case 0:
+          setShowDialog1(true);
+          break;
+        case 1:
+          setShowDialog2(true);
+          break;
+        case 2:
+          setShowDialog3(true);
+          break;
+        case 3: 
+          setShowDialog4(true);
+          break;
+        default:
+          break;
+      }
+    };
+  // const onConfirm = () => {
+  //   console.log('확인');
+    
+  // }
   
   
 
@@ -116,7 +135,7 @@ function Signup1() {
                     
                     <p 
                     id={data.id}
-                    onClick={onClick}
+                    onClick={() => handleDialogClick(key)}
                     ref={(el) => {
                       titleRef.current[key] = el
                     }}
@@ -125,10 +144,46 @@ function Signup1() {
                     </p>
                   </li>
                 ))}
+                {showDialog1 && (
+                  <Dialog1
+                    visible={showDialog1}
+                    onConfirm={() => setShowDialog1(false)}
+                    title={data[selectedDialogIndex].head}
+                    confirmText='확인'
+                  />
+                )}
+                {showDialog2 && (
+                  <Dialog2
+                    visible={showDialog2}
+                    onConfirm={() => setShowDialog2(false)}
+                    title={data[selectedDialogIndex].head}
+                    confirmText='확인'
+                  />
+                )}
+                {showDialog3 && (
+                  <Dialog3
+                    visible={showDialog3}
+                    onConfirm={() => setShowDialog3(false)}
+                    title={data[selectedDialogIndex].head}
+                    confirmText='확인'
+                  />
+                )}
+                {showDialog4 && (
+                  <Dialog4
+                    visible={showDialog4}
+                    onConfirm={() => setShowDialog4(false)}
+                    title={data[selectedDialogIndex].head}
+                    confirmText='확인'
+                  />
+                )}
               </ul>
             </div>
             <div className='next'>
-           <button className='next-btn' onClick={handleNextPage}>동의 및 다음</button>
+           {/* <button className='next-btn' onClick={handleNextPage}>동의 및 다음</button> */}
+           <br />
+           <br />
+           <br />
+           <Button color='pink' size='large' onClick={handleNextPage}>동의 및 다음</Button>
             </div>
           </div>
           {/* <Dialog2 title='서비스 이용약관' confirmText='확인' onConfirm={onConfirm} visible={dialog}></Dialog2> */}

@@ -98,7 +98,7 @@ import styled, { css } from 'styled-components'
   function Button({children, color, size, fullWidth, ...rest}) {
     return (
     <StyledButton 
-    color={color} 
+    color={color}
     size={size} 
     fullWidth={fullWidth}
     {...rest}

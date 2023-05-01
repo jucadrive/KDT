@@ -35,13 +35,20 @@ const DarkBackground = styled.div`
 
     // 컴포넌트 앞 글자는 무조건 대문자다
     const InnerBlock = styled.div`
+    font-size: 19px;
     border-radius: 5px;
     padding: 1.5rem;
     height: 40vh;
     background: lightgray;
     margin: 10px;
     overflow-y: scroll;
-    line-height: 1.5rem;
+    line-height: 2.5rem;
+    strong {
+      font-weight: bold;
+    }
+    b {
+      font-weight: bold;
+    }
     `;
 
     const ButtonGroup = styled.div`
@@ -62,7 +69,6 @@ function Dialog2({ title, confirmText, onConfirm, visible }) {
       <DialogBlock>
         <InnerBlock>
         <h3>{title}</h3>
-        <h3>[개인정보활용동의서]</h3>
         <br />
         "회사는 회원가입에 의한 주카 ID 서비스 제공을 위해 다음과 같이 개인정보를 활용합니다."
         <br />

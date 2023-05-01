@@ -35,13 +35,20 @@ const DarkBackground = styled.div`
 
     // 컴포넌트 앞 글자는 무조건 대문자다
     const InnerBlock = styled.div`
+    font-size: 19px;
     border-radius: 5px;
     padding: 1.5rem;
     height: 40vh;
     background: lightgray;
     margin: 10px;
     overflow-y: scroll;
-    line-height: 1.5rem;
+    line-height: 2.5rem;
+    strong {
+      font-weight: bold;
+    }
+    b {
+      font-weight: bold;
+    }
     `;
 
     const ButtonGroup = styled.div`
