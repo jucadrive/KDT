@@ -1,19 +1,15 @@
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import { Link } from 'react-router-dom'
+import HeaderContainer from '../common/HeaderContainer';
 
 // 회원가입/로그인 페이지의 레이아웃 담당하는 컴포넌트입니다. 
 
 
 const AuthTemplateBlock = styled.div`
- position: absolute;
- left: 0;
- top: 0;
- bottom: 0;
- right: 0;
-
- background: ${palette.gray[2]};
+//  background: ${palette.gray[2]};
 /*flex로 내부 내용 중앙 정렬*/
+height:810px;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -38,6 +34,8 @@ align-items: center;
 
 const AuthTemplate = ({children}) => {
     return(
+    <>
+    <HeaderContainer/>
     <AuthTemplateBlock>
         <WhiteBox>
             <div className='logo-area'>
@@ -46,6 +44,7 @@ const AuthTemplate = ({children}) => {
             {children}
         </WhiteBox>
     </AuthTemplateBlock>
+    </>
     )
 }
 

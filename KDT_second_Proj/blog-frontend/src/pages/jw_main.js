@@ -85,7 +85,7 @@ export default function Main() {
             textRef1.current[0] = el;
           }}
         >
-          구 독
+          <span style={{fontSize:"70px", color:"orangered"}}>Da</span> 독
         </p>
         <p className={style.mainTxt2}
           ref={(el) => {
@@ -110,7 +110,7 @@ export default function Main() {
           <div className={style.imgBoxss}>
             <div
               style={{
-                paddingLeft: "30px",
+                paddingLeft: "100px",
               }}
               className={style.imgBoxs}
             >
@@ -133,7 +133,7 @@ export default function Main() {
             </div>
             <div
               style={{
-                paddingRight: "30px",
+                paddingRight: "100px",
               }}
               className={style.imgBoxs}
             >

@@ -2,6 +2,9 @@
     width:100%;
     height:auto;
     font-family: kakao;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .main{
@@ -106,7 +109,7 @@
     top:70px;
 }
 .rightContentArea > .goTOSubscribe{
-    width: 300px;
+    width: 332px;
     height: 272px;
     border-radius: 10px;
     background-color: white;
@@ -121,12 +124,12 @@
 .goTOSubscribeTxt > .todaySubscribeIs{
     font-size: 20px;
     font-weight: bold;
+    margin-bottom: 25px;
     
 }
 .goTOSubscribeTxt > .toLogin{
     font-size: 16px;
     color:rgb(64, 143, 247);
-    margin-top: 15px;
 }
 .goTOSubscribeTxt > .subscribing{
     font-size: 14px;
@@ -139,7 +142,7 @@
     display: flex;
 }
 .rightContentArea > .cs{
-    width:300px;
+    width:332px;
     height:120px;
     border-radius: 10px;
     background-color: white;
@@ -331,7 +334,7 @@
 }
 
 @media(width>=1440px){
-    .container{
+    .container1{
         width:1440px;
     }
 }

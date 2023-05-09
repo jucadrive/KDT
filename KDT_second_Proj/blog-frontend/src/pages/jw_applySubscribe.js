@@ -20,6 +20,7 @@ import CanvasImage from "../additional_features/jw_canvasRGB";
 import comma from "../additional_features/jw_amount_notation";
 import HeaderContainer from "../components/common/HeaderContainer";
 import TopBtnjw from '../component/jw_topBtn';
+import ModalJW from "../component/jw_modal";
 
 let [a, c, k, t, d] = [[], [], [], 0, 0];
 
@@ -33,8 +34,10 @@ function ApplySubscribe_jw() {
     key = data.getKeyConvertJS,
     totalPrice = data.totalPrice,
     discount = data.discount,
+    user = useSelector( ({user}) => ({ user: user.user})),
+    [isModal, setIsModal] = useState(false),
     dispatch = useDispatch();
-    
+    console.log(user)
 
   const canvasRef = useRef(null);
 
@@ -104,9 +107,13 @@ function ApplySubscribe_jw() {
 
 
   }
-  // 컨텐츠를 누르면 해당하는 페이지로 이동
-  function moveToDiscription(e) {}
-  // +담기 버튼을 클릭 시 함수
+  function beforeLogin(){
+    alert('지금 문제점은 +담기 버튼을 누르면 +담기 만 눌리는게 아니라 컨텐츠 상세'+
+    ' 페이지 까지 눌려서 link 타고 넘어가 지는 문제점')
+    setIsModal(val=>!val)
+  }
+
+  // 로그인 후 +담기 버튼을 클릭 시 함수
   function addBtnOnClick(e) {
     e.preventDefault();
     const resultData = contentsData.find((x) => x.id === e.target.id);
@@ -136,11 +143,13 @@ function ApplySubscribe_jw() {
   // console.log("applySubscribe rendering..");
   return (
     <>
+    {console.log(isModal)}
+    {isModal===false? <ModalJW/>:""}
      <HeaderContainer />
      <TopBtnjw />
       <div className={style.container}>
         <div className={style.container1}>
-          <div className={style.main}>
+          <div style={{overflow:'hidden'}} className={style.main}>
             <div className={style.mainLeft}>
               <div className={style.swiperArea}>
                 <Slide />
@@ -229,7 +238,6 @@ function ApplySubscribe_jw() {
                         <img src={value.url} alt="" />
                       </div>
                       <Link
-                        onClick={moveToDiscription}
                         to={`category=/${value.id}`}
                       >
                         <div
@@ -263,7 +271,7 @@ function ApplySubscribe_jw() {
                             </div>
                             <button
                               id={value.id}
-                              onClick={addBtnOnClick}
+                              onClick={!user ? addBtnOnClick : beforeLogin}
                               className={style.addBtn}
                             >
                               {onOff[index] ? "- 빼기 " : "+ 담기"}
@@ -313,13 +321,13 @@ function ApplySubscribe_jw() {
                       오늘은 어떤 상품을
                       <br /> 구독할까요?
                     </div>
-                    <div className={style.toLogin}>
-                      로그인 하러 가기{" "}
+                    <Link to='/login' className={style.toLogin}>
+                      로그인 하러 가기
                       <i
                         style={{ marginLeft: "5px" }}
                         className="fa-solid fa-arrow-right"
                       ></i>
-                    </div>
+                    </Link>
                     <div className={style.subscribing}>현재 구독중인 상품</div>
                     <div className={style.ckeckYourContent}>
                       <div className={style.cautionBtn}>i</div> <pre> </pre>
@@ -331,7 +339,7 @@ function ApplySubscribe_jw() {
                   <div className={style.csMenuArea1}>
                     <div className={style.csMenuImg1}>
                       <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQON_GawiUP2UC1l9Ib0DKuZhZRzXk13jXadg&usqp=CAU"
+                        src={process.env.PUBLIC_URL + '../../logo.png'}
                         alt=""
                       />
                     </div>
@@ -340,7 +348,7 @@ function ApplySubscribe_jw() {
                   <div className={style.csMenuArea2}>
                     <div className={style.csMenuImg2}>
                       <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQON_GawiUP2UC1l9Ib0DKuZhZRzXk13jXadg&usqp=CAU"
+                        src={process.env.PUBLIC_URL + '../../logo.png'}
                         alt=""
                       />
                     </div>
@@ -349,7 +357,7 @@ function ApplySubscribe_jw() {
                   <div className={style.csMenuArea3}>
                     <div className={style.csMenuImg3}>
                       <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQON_GawiUP2UC1l9Ib0DKuZhZRzXk13jXadg&usqp=CAU"
+                        src={process.env.PUBLIC_URL + '../../logo.png'}
                         alt=""
                       />
                     </div>

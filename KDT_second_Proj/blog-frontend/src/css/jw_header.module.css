@@ -8,6 +8,8 @@
     width:100%;
     height:auto;
     position: sticky;
+    display: flex;
+    justify-content: center;
     top:0px;
     z-index: 10;
 }
@@ -68,7 +70,7 @@ a > button{
     height:50px;
 }
 @media(width>=1440px){
-    .container{
+    .header{
         width:1440px;
     }
 }

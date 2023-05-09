@@ -9,12 +9,10 @@ function gaspScrollTrigger(idx1, idx2, idx3, idx4, idx5, idx6, idx7) {
   gsap.from(idx7.current,{
     opacity:0, delay:1.5
   })
-  const tl1 = gsap.timeline();
-  tl1.to(idx7.current,{
-    opacity:1, duration:1, delay:1.5
-  }).to(idx7.current,{
-    repeat:-1, delay:0.6, rotationZ:'3600deg',ease:'linear',transformOrigin:'center 26.9%'
-  })
+
+  gsap.to(idx7.current,{
+    opacity:1, duration:1, delay:1.5})
+
  
 
   // 첫 번째 메인화면 애니메이션
@@ -34,66 +32,7 @@ function gaspScrollTrigger(idx1, idx2, idx3, idx4, idx5, idx6, idx7) {
           { opacity: 1, duration: 1, delay: a, y: -50 }
         );
   }
-  // for (var i = 0; i < 12; i += 2) {
-  //   gsap.fromTo(
-  //     idx1.current[i],
-  //     { opacity: 0, delay: 0.058 * i },
-  //     { opacity: 1, duration: 1, delay: 0.058 * i, y: -50 }
-  //   );
-  // }
-  // for (var i = 1; i < 12; i += 2) {
-  //   gsap.fromTo(
-  //     idx1.current[i],
-  //     { opacity: 0, delay: 0.058 * i },
-  //     {
-  //       opacity: 1,
-  //       transform: "rotateY(180deg)",
-  //       duration: 1,
-  //       delay: 0.058 * i,
-  //       y: -50,
-  //     }
-  //   );
-  // }
-  // for (var i = 12; i < 26; i += 2) {
-  //   gsap.fromTo(
-  //     idx1.current[i],
-  //     { opacity: 0, delay: 0.058 * i },
-  //     { opacity: 1, duration: 1, delay: 0.058 * i, y: -50 }
-  //   );
-  // }
-  // for (var i = 13; i < 26; i += 2) {
-  //   gsap.fromTo(
-  //     idx1.current[i],
-  //     { opacity: 0, delay: 0.058 * i },
-  //     {
-  //       opacity: 1,
-  //       transform: "rotateY(180deg)",
-  //       duration: 1,
-  //       delay: 0.058 * i,
-  //       y: -50,
-  //     }
-  //   );
-  // }
-  // for (var i = 26; i < 39; i += 2) {
-  //   gsap.fromTo(
-  //     idx1.current[i],
-  //     { opacity: 0, delay: 0.058 * i },
-  //     { opacity: 1, duration: 1, delay: 0.058 * i, y: -50 }
-  //   );
-  // }
-  // for (var i = 27; i < 39; i += 2) {
-  //   gsap.fromTo(
-  //     idx1.current[i],
-  //     { opacity: 0, delay: 0.058 * i },
-  //     {
-  //       opacity: 1,
-  //       transform: "rotateY(180deg)",
-  //       duration: 1,
-  //       delay: 0.058 * i,
-  //       y: -50,
-  //     }
-  //   );
-  // }
+  
   // 각 페이지 글자 에니메이션
   for (var i = 0; i < 2; i++) {
     gsap.fromTo(

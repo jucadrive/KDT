@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 // import { configureStore } from "@reduxjs/toolkit";
 import './index.css';
 import App from './App';
@@ -14,9 +14,6 @@ import reportWebVitals from "./reportWebVitals";
 import style from './css/jw_app.module.css';
 import ScrollTop from './additional_features/jw_scrollTop';
 import Footerjw from './component/jw_footer';
-
-
-
 
 
 

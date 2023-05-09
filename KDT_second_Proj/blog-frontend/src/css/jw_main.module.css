@@ -20,7 +20,6 @@
   width: 200px;
   height: 200px;
   border-radius: 100px;
-  padding-top:10px;
 }
 .box {
   width: 100%;
@@ -46,7 +45,7 @@
   padding-top:350px
 }
 .contentBox1 > div:nth-child(1) {
-  width: 55%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -56,7 +55,7 @@
   padding-right: 50px;
 }
 .contentBox1 > div:nth-child(2) {
-  width: 45%;
+  width: 50%;
   height: 100%;
   padding-left: 100px;
 }
@@ -153,7 +152,7 @@
   font-size: 20px;
   position: absolute;
   top: calc(4830px + 50vh);
-  left: 41.5vw;
+  left: calc(50vw - 180px);
   z-index: 2;
   border: 1px solid gray;
 }
