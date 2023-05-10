@@ -12,6 +12,7 @@ import {
   getKeyConvertJSRdc,
   totalPriceRdc,
   discountRdc,
+  modalRdc,
 } from "../data/jw_data";
 import useAxios from "../additional_features/jw_useAxios";
 import contentsSelect from "../additional_features/jw_contentsSelect";
@@ -22,7 +23,7 @@ import HeaderContainer from "../components/common/HeaderContainer";
 import TopBtnjw from '../component/jw_topBtn';
 import ModalJW from "../component/jw_modal";
 
-let [a, c, k, t, d] = [[], [], [], 0, 0];
+let [a, c, k, t, d, f] = [[], [], [], 0, 0, false];
 
 function ApplySubscribe_jw() {
   const contentsData = useAxios("http://localhost:4001/data"),
@@ -35,7 +36,7 @@ function ApplySubscribe_jw() {
     totalPrice = data.totalPrice,
     discount = data.discount,
     user = useSelector(({ user }) => ({ user: user.user })),
-    [isModal, setIsModal] = useState(false),
+    isModal = data.modalOnOff,
     dispatch = useDispatch();
 
   const canvasRef = useRef(null);
@@ -108,8 +109,8 @@ function ApplySubscribe_jw() {
   }
   function beforeLogin(e) {
     e.preventDefault();
-    setIsModal(true)
-    console.log("contentData : ",isModal)
+    f = !f
+    dispatch(modalRdc(isModal))
   }
 
   // 로그인 후 +담기 버튼을 클릭 시 함수
@@ -142,7 +143,6 @@ function ApplySubscribe_jw() {
   // console.log("applySubscribe rendering..");
   return (
     <>
-    {console.log(user.user)}
     {user.user===null&&(isModal===true) ?  <ModalJW visible={isModal}/>:""}
       <HeaderContainer />
       <TopBtnjw />

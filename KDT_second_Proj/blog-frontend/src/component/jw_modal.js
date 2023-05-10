@@ -1,18 +1,26 @@
 import { useState } from "react"
 import { Link } from 'react-router-dom'
 import style from '../css/jw_modal.module.css'
+import { useDispatch, useSelector } from "react-redux"
+import { modalRdc } from "../data/jw_data";
 
-export default function ModalJW(props) {
-    
-    const [a, setA] = useState(props.visible)
+export default function ModalJW() {
+    const isModal = useSelector(store=>store.dataSet.modalOnOff),
+          [a, setA] = useState(),
+          dispatch = useDispatch();
+          document.body.style="overflow:hidden"
+          
 
     function closeFn(e) {
-        setA(false)
+
+       setA(isModal)
+        
+        dispatch(modalRdc(isModal))
     }
-    console.log("modalData : ",props.visible)
+
     return (
         <>
-       <div style={{ display: !a ? "none": 'flex' }} className={style.container}>
+       <div style={{display:( a ? "none" :"flex")}} className={style.container}>
             <div className={style.modal}>
                 <div className={style.xBtn} onClick={closeFn} ><i className="fa-solid fa-x"></i></div>
                 <p style={{ fontSize: '20px' }}> 지금 로그인 하시겠어요?</p>

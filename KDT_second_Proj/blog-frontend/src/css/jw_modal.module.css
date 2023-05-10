@@ -6,8 +6,6 @@
     z-index: 20;
     display: flex;
     justify-content: space-around;
-    overflow: hidden;
-    padding-top:calc(50vh - 140px);
 }
 .modal{
     width: 462px;

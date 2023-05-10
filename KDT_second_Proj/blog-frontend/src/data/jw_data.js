@@ -12,6 +12,7 @@ const initialState = {
   // 컨텐츠가 하나라도 선택 시 장바구니가 활성화되고 없으면 사라짐
   onOffArr: [],
   discount : 0,
+  modalOnOff : null
 
 };
 
@@ -36,6 +37,11 @@ const dataSet = createSlice({
     discountRdc: (state, action) => {
       state.discount = action.payload;
     },
+    modalRdc: (state, action) => {
+      state.modalOnOff = !state.modalOnOff;
+      console.log(state.modalOnOff)
+    },
+ 
 
   },
 });
@@ -46,5 +52,6 @@ export const {
   getKeyConvertJSRdc,
   totalPriceRdc,
   discountRdc,
+  modalRdc
 } = dataSet.actions;
 export default dataSet.reducer;
