@@ -34,10 +34,9 @@ function ApplySubscribe_jw() {
     key = data.getKeyConvertJS,
     totalPrice = data.totalPrice,
     discount = data.discount,
-    user = useSelector( ({user}) => ({ user: user.user})),
+    user = useSelector(({ user }) => ({ user: user.user })),
     [isModal, setIsModal] = useState(false),
     dispatch = useDispatch();
-    console.log(user)
 
   const canvasRef = useRef(null);
 
@@ -80,16 +79,16 @@ function ApplySubscribe_jw() {
     // 데이터만 출력
     if (e.target.id !== "all") {
       f = contentsData.filter((x) => x.category === e.target.id);
-      for (var j=0; j<f.length; j++){
+      for (var j = 0; j < f.length; j++) {
 
-        k[j]=onOff[(f[j].id.slice(2,3)-1)]
-          console.log(f[j].id.slice(2,3)-1)
-          console.log(k)
-        
+        k[j] = onOff[(f[j].id.slice(2, 3) - 1)]
+        console.log(f[j].id.slice(2, 3) - 1)
+        console.log(k)
+
       }
       setOnOff(k)
       setFilteredData(f);
-    } 
+    }
     else {
       f = contentsData;
       // k=[]
@@ -97,7 +96,7 @@ function ApplySubscribe_jw() {
 
       //   k=[...k,onOff[(f[j].id.slice(2,3)-1)]]
       //     console.log(k)
-        
+
       // }
       setOnOff(a)
       setFilteredData(f);
@@ -107,10 +106,10 @@ function ApplySubscribe_jw() {
 
 
   }
-  function beforeLogin(){
-    alert('지금 문제점은 +담기 버튼을 누르면 +담기 만 눌리는게 아니라 컨텐츠 상세'+
-    ' 페이지 까지 눌려서 link 타고 넘어가 지는 문제점')
-    setIsModal(val=>!val)
+  function beforeLogin(e) {
+    e.preventDefault();
+    setIsModal(true)
+    console.log("contentData : ",isModal)
   }
 
   // 로그인 후 +담기 버튼을 클릭 시 함수
@@ -118,7 +117,7 @@ function ApplySubscribe_jw() {
     e.preventDefault();
     const resultData = contentsData.find((x) => x.id === e.target.id);
     [a, c, t, d] = contentsSelect(contentsData, resultData, e);
-
+   
     setOnOff(c);
 
     dispatch(getKeyConvertJSRdc(sessionStorage(a)));
@@ -143,13 +142,13 @@ function ApplySubscribe_jw() {
   // console.log("applySubscribe rendering..");
   return (
     <>
-    {console.log(isModal)}
-    {isModal===false? <ModalJW/>:""}
-     <HeaderContainer />
-     <TopBtnjw />
+    {console.log(user.user)}
+    {user.user===null&&(isModal===true) ?  <ModalJW visible={isModal}/>:""}
+      <HeaderContainer />
+      <TopBtnjw />
       <div className={style.container}>
         <div className={style.container1}>
-          <div style={{overflow:'hidden'}} className={style.main}>
+          <div className={style.main}>
             <div className={style.mainLeft}>
               <div className={style.swiperArea}>
                 <Slide />
@@ -271,7 +270,7 @@ function ApplySubscribe_jw() {
                             </div>
                             <button
                               id={value.id}
-                              onClick={!user ? addBtnOnClick : beforeLogin}
+                              onClick={user.user!==null ? addBtnOnClick : beforeLogin}
                               className={style.addBtn}
                             >
                               {onOff[index] ? "- 빼기 " : "+ 담기"}
@@ -285,7 +284,7 @@ function ApplySubscribe_jw() {
                             {Math.round(
                               (1 -
                                 (value.price - value.discount) / value.price) *
-                                100
+                              100
                             ) + "%"}
                           </div>
                           <div>월 {comma(value.price - value.discount)}원</div>
@@ -321,18 +320,18 @@ function ApplySubscribe_jw() {
                       오늘은 어떤 상품을
                       <br /> 구독할까요?
                     </div>
-                    <Link to='/login' className={style.toLogin}>
+                   {user.user===null?<Link to='/login' className={style.toLogin}>
                       로그인 하러 가기
                       <i
                         style={{ marginLeft: "5px" }}
                         className="fa-solid fa-arrow-right"
                       ></i>
-                    </Link>
+                    </Link>:""}
                     <div className={style.subscribing}>현재 구독중인 상품</div>
-                    <div className={style.ckeckYourContent}>
+                    {user.user===null?<div className={style.ckeckYourContent}>
                       <div className={style.cautionBtn}>i</div> <pre> </pre>
                       로그인 하고 구독중인 상품을 확인해 보세요
-                    </div>
+                    </div>:""}
                   </div>
                 </div>
                 <div className={style.cs}>

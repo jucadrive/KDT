@@ -29,19 +29,15 @@ const Header = ({user, onLogout}) => {
                     <Link to='/' className={style.linkStyle}><button id='header3' onClick={onOffFunction} className={ (onOff[2] ? `${style.selected}`:null)}>이벤트</button></Link>
                     <Link to='/' className={style.linkStyle}><button id='header4' onClick={onOffFunction} className={ (onOff[3] ? `${style.selected}`:null)}>고객센터</button></Link>
                 </div>
-                {/* <div className={style.logIn}>
-                    <Link to='/login'><i style={{marginRight:'5px'}} className="fa-solid  fa-arrow-right-to-bracket" />로그인</Link>
-                </div> */}
+
                       {user? (<>
                                <div style={{marginLeft:'670px'}}>{user.username}</div>
                             <div className={style.logIn}>
                                 <Link to='/main' onClick={onLogout} ><i style={{marginRight:'5px'}} className="fa-solid  fa-arrow-right-to-bracket" />로그아웃</Link>
-                                {/* <Button onClick={onLogout}>로그아웃</Button> */}
                             </div></>
                         ) : (
                             <div className={style.logIn}>
                                 <Link to='/login'><i style={{marginRight:'5px'}} className="fa-solid  fa-arrow-right-to-bracket" />로그인</Link>
-                                {/* <Button to="/login">로그인</Button> */}
                             </div>
                         )}
             </div>

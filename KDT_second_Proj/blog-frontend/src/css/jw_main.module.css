@@ -49,7 +49,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: flex-end;
 }
 .contentBox1 > div:nth-child(1) > img {
   padding-right: 50px;
@@ -91,7 +91,7 @@
 .imgBoxs {
   display: flex;
   justify-content: space-around;
-  align-items: end;
+  align-items: flex-end;
 }
 .imgBoxl {
   width: 100%;
