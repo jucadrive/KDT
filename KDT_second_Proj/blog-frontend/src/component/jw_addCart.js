@@ -70,7 +70,7 @@ function Addcart(props) {
           </div>
           <div className={style.asdf}>
             {/* 여기서부터 선택한 컨텐츠 */}
-            <ul>
+            <ul style={{paddingLeft:'0px'}}>
               {props.getKeyConvertJS.map((value, index) => {
                 return (
                   <li key={value.id}>

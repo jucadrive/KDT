@@ -1,4 +1,4 @@
-import { useLayoutEffect, useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { Link } from 'react-router-dom'
 import gaspScrollTrigger from "../additional_features/gsapScrollTrigger";
 import style from "../css/jw_main.module.css";

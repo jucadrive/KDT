@@ -6,8 +6,10 @@ import RegisterPage from './pages/RegisterPage';
 import WritePage from './pages/WritePage';
 import PostPage from './pages/PostPage';
 import Main from './pages/jw_main'
-import Asdfsadf from '../src/component/asdfasdf';
+import Mj_detail_page from './pages/mj_detail_page';
+import Mj_mypage from './component/mj_mypage';
 import ApplySubscribeJW from "./pages/jw_applySubscribe";
+import Mj_mypage_coupon from './component/mj_mypage_coupon';
 
 
 const App = () => {
@@ -18,8 +20,12 @@ const App = () => {
       <Route path="/" element={<Outlet />}>
           <Route path="main/" element={<ApplySubscribeJW />} />
           <Route path="main/" element={<Outlet />}>
-            <Route path="category=/:contentsId" Component={Asdfsadf}></Route>
-            <Route path="myInfo" Component={Asdfsadf}></Route>
+            <Route path="category=/:contentsId" element={<Mj_detail_page/>}></Route>
+            <Route path="myInfo/" element={<Mj_mypage/>}></Route>
+            <Route path="myInfo/" element={<Outlet/>}>
+              <Route path='coupon/' element={<Mj_mypage_coupon/>}/>
+              <Route path='month/' element={<Mj_mypage_coupon/>}/>
+            </Route>
           </Route>
       </Route>
       <Route path="/postlist" element={<PostListPage />}  />

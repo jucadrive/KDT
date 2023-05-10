@@ -79,10 +79,10 @@ function ApplySubscribe_jw() {
     // 데이터만 출력
     if (e.target.id !== "all") {
       f = contentsData.filter((x) => x.category === e.target.id);
-      for (var j = 0; j < f.length; j++) {
+      for (var jj = 0; jj < f.length; jj++) {
 
-        k[j] = onOff[(f[j].id.slice(2, 3) - 1)]
-        console.log(f[j].id.slice(2, 3) - 1)
+        k[jj] = onOff[(f[jj].id.slice(2, 3) - 1)]
+        console.log(f[jj].id.slice(2, 3) - 1)
         console.log(k)
 
       }

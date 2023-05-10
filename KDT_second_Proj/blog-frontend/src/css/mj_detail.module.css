@@ -8,23 +8,32 @@
     font-family: kakao;
     src: url(../font/KakaoOTFRegular.otf);
 }
-
+.jwjw{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
 .detail_box {
+    width:80%;
     font-size: 22px;
     font-weight: bold;
     display: flex;
-    justify-content: baseline;
+    justify-content: center;
 }
 
 .left_side_box {
-    width: 800px;
+    width: 700px;
+}
+
+.left_side_box img {
+    width: 700px;
 }
 
 .left_btn_box {
     position: sticky;
     top: 58px;
     height: 80px;
-    background-color: #005AC2;
+    background-color: whitesmoke;
     display: flex;
     justify-content: space-around;
     border: none;
@@ -32,10 +41,10 @@
 }
 
 .left_btn_box button {
-    background-color: #005AC2;
+    background-color: whitesmoke;
     border: none;
     font-size: 20px;
-    color: #ffffff;
+    color: black;
     line-height: 56px;
     cursor: pointer;
 }
@@ -60,19 +69,6 @@
 
 }
 
-.left_side_table {
-    margin-top: 500px;
-    border-collapse: collapse;
-    border: 2px solid #666;
-}
-
-.left_side_table th,
-td {
-    text-align: center;
-    border: 1px solid #666;
-    padding: 18px;
-}
-
 .left_side_text {
     font-size: 20px;
     line-height: 2rem
@@ -88,7 +84,7 @@ td {
     top: 58px;
     width: 335px;
     height: 95vh;
-    margin-left: 50px;
+    margin-left: 200px;
 }
 
 .left_side_text {
@@ -186,8 +182,6 @@ td {
 
 .detail_footer_text {
     background-color: rgb(53, 52, 49);
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
     padding: 30px;
     word-spacing: 0.3rem;
     color: #8d8d8d;
@@ -201,4 +195,9 @@ td {
 
 .detail_footer_text ul li {
     font-size: 18px;
+}
+@media(width>=1440px){
+    .detail_box{
+        width:1440px
+    }
 }
