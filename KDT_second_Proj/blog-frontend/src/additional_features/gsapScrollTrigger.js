@@ -25,7 +25,6 @@ function gaspScrollTrigger(idx1, idx2, idx3, idx4, idx5, idx6, idx7) {
   }
   for(var i=0; i<39; i++){
   var  a =  Math.random()*1.5
-   console.log(a)
     gsap.fromTo(
           idx1.current[i],
           { opacity: 0 },

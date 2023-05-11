@@ -1,29 +1,22 @@
 import { useState, useEffect, useRef } from "react";
 import style from '../css/mj_detail.module.css'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Header_JW from '../components/common/Header';
-
-
-
+import contentsSelect from "../additional_features/jw_contentsSelect";
+import { getKeyConvertJSRdc, totalPriceRdc, discountRdc } from "../data/jw_data";
+import sessionStorage from "../additional_features/jw_sessionStorage";
+import comma from "../additional_features/jw_amount_notation";
+let [a, c, t, d] = [[], [], 0, 0];
 /* ↓ 전체 페이지에서 왼쪽 부분에 Detail 게시물에서 선택한 상품의 상세정보가 보여짐 */
 
 function SideLeftBox(props) {
-    const [data, setData] = useState([props.data]);
-    const [isLoading, setIsLoading] = useState(false);
-    const dispatch = useDispatch();
+
     const [imgUrl, setImgUrl] = useState('');
     let imgRef = useRef();
 
 
     useEffect(() => {
-        setData(props.data)
-        setIsLoading(val => !val)
-    }, [])
-
-    useEffect(() => {
         for (var i = 1; i < props.length.length; i++) {
-            console.log(props.data.id)
             switch (props.data.id) {
                 case `ID${i}`: {
                     setImgUrl(`/detailImg/detailImg_${i}.jpg`)
@@ -47,7 +40,6 @@ function SideLeftBox(props) {
 
             <div className={style.left_content_box}>
                 <img ref={imgRef} src={process.env.PUBLIC_URL + imgUrl} />
-                {(console.log(props.data.img))}
                 <Detailfooter />
             </div>
         </div></>
@@ -57,19 +49,31 @@ function SideLeftBox(props) {
 function SideRightBox(props) {
 
     const [data, setData] = useState([props.data]);
+    const data1 = useSelector(store=>store.dataSet)
     const [isLoading, setIsLoading] = useState(false);
+    const contentsData = data1.contentsData;
     const dispatch = useDispatch();
-
+    const [isAdded, setIsAdd] = useState();
+    const detailList = data;
 
     useEffect(() => {
 
         setData(props.data)
         setIsLoading(val => !val)
+        setIsAdd(true)
+      
     }, [])
 
+    function addCategory(e){
+
+     [a, c, t, d] = contentsSelect(contentsData, detailList, e);
+     console.log(c)
+    dispatch(getKeyConvertJSRdc(sessionStorage(a)))
+    dispatch(totalPriceRdc(t));
+    dispatch(discountRdc(d));
 
 
-    const detailList = data
+    }
 
     return (
         <>{isLoading ? <div className={style.right_side_box}>
@@ -77,20 +81,20 @@ function SideRightBox(props) {
                 <div>
                     <div className={style.right_detail_text}>
                         <b style={{ fontSize: "35px" }}>{detailList.title}</b>
-                        <span><img src={detailList.url} /></span>
+                       <img style={{width:'25%', height:'25%'}} src={detailList.url} />
                     </div>
                     <button className={style.right_optionbtn}>{detailList.option}</button>
                     <div>
                         <div>
-                            <small className={style.saleprice}>{detailList.price}</small><br></br>
-                            <span className={style.percent}>{ }</span>475원 할인
-                            <Link to='/main'><button className={style.right_addbtn}>+ 담기</button></Link>
+                            <del className={style.saleprice}>{comma(detailList.price)+"원"}</del><br></br>
+                            <span className={style.percent}>{ Math.round((1-((detailList.price - detailList.discount)/detailList.price))*100)}%</span>{comma(detailList.price - detailList.discount)+"원"}
+                            <Link to='/main'><button id={detailList.id} onClick={addCategory} className={style.right_addbtn}>{isAdded ? "+ 담기":"- 빼기"}</button></Link>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <Link to={'/main'} div className={style.right_detailbtn}>
+            <Link to={'/main'} className={style.right_detailbtn}>
                 다른 구독 상품 보러가기
             </Link>
         </div> : ""}

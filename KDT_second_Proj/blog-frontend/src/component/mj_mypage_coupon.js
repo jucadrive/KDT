@@ -1,5 +1,5 @@
 import style from '../css/mj_mypage.module.css'
-// import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import Header_JW from '../components/common/Header';
 import { Link } from 'react-router-dom'
 import { useState } from 'react'

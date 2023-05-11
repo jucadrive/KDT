@@ -11,14 +11,18 @@ import {
 import contentsSelect from "../additional_features/jw_contentsSelect";
 import sessionStorage from "../additional_features/jw_sessionStorage";
 import comma from "../additional_features/jw_amount_notation";
+import ModalJW from "./jw_modal";
+import { modalRdc } from "../data/jw_data";
+let [a, c, t, d, f] = [[], [], 0, 0, false];
 
-let [a, c, t, d] = [[], [], 0, 0];
 
 function Addcart(props) {
   const data = useSelector((store) => store.dataSet),
     btnCount = data.btnCount,
     contentsData = data.contentsData,
     dispatch = useDispatch(),
+    user = useSelector(({ user }) => ({ user: user.user })),
+    isModal = data.modalOnOff,
     [expectedPrice, setExpectedPrice] = useState(0);
 
   useEffect(() => {
@@ -39,11 +43,18 @@ function Addcart(props) {
     dispatch(getKeyConvertJSRdc(sessionStorage(a)));
     dispatch(totalPriceRdc(t));
     dispatch(discountRdc(d));
-    // dispatch(onOffRdc(onOff))
   }
+  
+  // 로그인 전 구독하기 버튼 눌렀을 떄
 
+  function beforeLogin(e) {
+    f = !f
+    dispatch(modalRdc(isModal))
+  }
+  
   // console.log('addCart rendering..')
   return (
+    
     <div
       style={btnCount ? { height: "60px" } : null}
       className={style.container}
@@ -112,7 +123,7 @@ function Addcart(props) {
               <div>월 {comma(props.totalPrice - props.discount)}원</div>
             </div>
           </div>
-          <Link><div className={style.confirmBtn}>구독 신청하기</div></Link>
+          {user.user!==null ?<Link to='myInfo/'><div className={style.confirmBtn}>구독 신청하기</div></Link> : <div onClick={beforeLogin} className={style.confirmBtn}>구독 신청하기</div>}
         </div>
       )}
     </div>

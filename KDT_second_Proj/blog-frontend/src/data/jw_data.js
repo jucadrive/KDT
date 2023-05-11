@@ -9,9 +9,9 @@ const initialState = {
   getKeyConvertJS: [],
   // 총 가격
   totalPrice: 0,
-  // 컨텐츠가 하나라도 선택 시 장바구니가 활성화되고 없으면 사라짐
-  onOffArr: [],
+  // 할인가
   discount : 0,
+  // 모달창 on off
   modalOnOff : null
 
 };
@@ -21,28 +21,29 @@ const dataSet = createSlice({
   initialState,
   reducers: {
     // 장바구니 활성화 비활성화
-    addCartbtn1Rdc: (state, action) => {
+    addCartbtn1Rdc: (state) => {
       state.btnCount = !state.btnCount;
     },
     // 컨텐츠 데이터 가져오기
     contentGetRdc: (state, action) => {
       state.contentsData = action.payload;
     },
+    // 세션에 저장한 데이터 저장
     getKeyConvertJSRdc: (state, action) => {
       state.getKeyConvertJS = action.payload;
     },
+    // 총 가격 저장
     totalPriceRdc: (state, action) => {
       state.totalPrice = action.payload;
     },
+    // 할인가 저장
     discountRdc: (state, action) => {
       state.discount = action.payload;
     },
-    modalRdc: (state, action) => {
+   
+    modalRdc: (state) => {
       state.modalOnOff = !state.modalOnOff;
-      console.log(state.modalOnOff)
-    },
- 
-
+    }
   },
 });
 
@@ -52,6 +53,7 @@ export const {
   getKeyConvertJSRdc,
   totalPriceRdc,
   discountRdc,
-  modalRdc
+  modalRdc,
+  onOffRdc
 } = dataSet.actions;
 export default dataSet.reducer;

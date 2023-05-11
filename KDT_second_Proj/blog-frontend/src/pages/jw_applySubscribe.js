@@ -12,7 +12,6 @@ import {
   getKeyConvertJSRdc,
   totalPriceRdc,
   discountRdc,
-  modalRdc,
 } from "../data/jw_data";
 import useAxios from "../additional_features/jw_useAxios";
 import contentsSelect from "../additional_features/jw_contentsSelect";
@@ -22,8 +21,9 @@ import comma from "../additional_features/jw_amount_notation";
 import HeaderContainer from "../components/common/HeaderContainer";
 import TopBtnjw from '../component/jw_topBtn';
 import ModalJW from "../component/jw_modal";
+import { useLocation } from "../../node_modules/react-router-dom/dist/index";
 
-let [a, c, k, t, d, f] = [[], [], [], 0, 0, false];
+let [a, k, c, t, d] = [[], [], [], 0, 0];
 
 function ApplySubscribe_jw() {
   const contentsData = useAxios("http://localhost:4001/data"),
@@ -37,6 +37,7 @@ function ApplySubscribe_jw() {
     discount = data.discount,
     user = useSelector(({ user }) => ({ user: user.user })),
     isModal = data.modalOnOff,
+    location = useLocation(),
     dispatch = useDispatch();
 
   const canvasRef = useRef(null);
@@ -83,8 +84,6 @@ function ApplySubscribe_jw() {
       for (var jj = 0; jj < f.length; jj++) {
 
         k[jj] = onOff[(f[jj].id.slice(2, 3) - 1)]
-        console.log(f[jj].id.slice(2, 3) - 1)
-        console.log(k)
 
       }
       setOnOff(k)
@@ -92,25 +91,13 @@ function ApplySubscribe_jw() {
     }
     else {
       f = contentsData;
-      // k=[]
-      // for (var j=0; j<f.length; j++){
 
-      //   k=[...k,onOff[(f[j].id.slice(2,3)-1)]]
-      //     console.log(k)
-
-      // }
       setOnOff(a)
       setFilteredData(f);
     }
 
     setMenuOnOff(m);
 
-
-  }
-  function beforeLogin(e) {
-    e.preventDefault();
-    f = !f
-    dispatch(modalRdc(isModal))
   }
 
   // 로그인 후 +담기 버튼을 클릭 시 함수
@@ -124,26 +111,44 @@ function ApplySubscribe_jw() {
     dispatch(getKeyConvertJSRdc(sessionStorage(a)));
     dispatch(totalPriceRdc(t));
     dispatch(discountRdc(d));
+  
+    if(key){
 
-    if (onOff) {
-      setIsTrue(onOff.includes(true));
+      setIsTrue(true);
     }
+    else{
+      setIsTrue(false)
+    }
+    
   }
+  
+  useEffect(()=>{
 
+    setOnOff(c)
+
+  },[location])
+  
   //  onOff는 contentsSelect 함수에서 return 된 contentsData.length를 갖는 onoff 기능 배열이다.
   //  버튼 클릭을 하면 addBtnOnClick 실행 > contentsSelect 실행 > onOff 데이터 변경이 된다.
   //  즉 버튼을 누를 때 마다 실행. onOff.include(true) 함수는 onOff 배열 중 하나라도 true가 있는지
   //  검사해주는 함수이다. 하나라도 일치하면 true, 아니면 false
+
+
   useEffect(() => {
-    if (onOff) {
-      setIsTrue(onOff.includes(true));
+     
+    if(key.length===0){
+      setIsTrue(false);
     }
-  }, [onOff]);
+   else{
+      setIsTrue(true)
+    }
+    
+  }, [key]);
 
   // console.log("applySubscribe rendering..");
   return (
     <>
-    {user.user===null&&(isModal===true) ?  <ModalJW visible={isModal}/>:""}
+    {user.user===null && (isModal===true) ? <ModalJW visible={isModal}/> : ""}
       <HeaderContainer />
       <TopBtnjw />
       <div className={style.container}>
@@ -270,7 +275,7 @@ function ApplySubscribe_jw() {
                             </div>
                             <button
                               id={value.id}
-                              onClick={user.user!==null ? addBtnOnClick : beforeLogin}
+                              onClick={ addBtnOnClick}
                               className={style.addBtn}
                             >
                               {onOff[index] ? "- 빼기 " : "+ 담기"}

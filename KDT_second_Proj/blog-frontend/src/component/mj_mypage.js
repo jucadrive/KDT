@@ -1,8 +1,7 @@
 import style from '../css/mj_mypage.module.css'
-// import 'bootstrap/dist/css/bootstrap.css';
-import Header_JW from '../components/common/Header';
+import 'bootstrap/dist/css/bootstrap.css';
+import Header_JW from '../components/common/HeaderContainer';
 import { Link } from 'react-router-dom'
-import { useState } from 'react';
 
 
 

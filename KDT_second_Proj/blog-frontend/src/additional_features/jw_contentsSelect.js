@@ -56,7 +56,6 @@ function contentsSelect(contentsData, resultData, e) {
     alert("5개 까지만 담을 수 있다.",)
  
   }
- 
 
   return [a, c, t, d];
 }

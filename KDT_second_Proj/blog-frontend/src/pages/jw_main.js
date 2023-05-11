@@ -224,13 +224,14 @@ export default function Main() {
                 fontSize: "20px",
               }}
             >
-              <p className={style.text2}
+              <div className={style.text2}
                 ref={(el) => {
                   textRef2.current[1] = el;
                 }}
               >
-                내 마음대로 고르는데 추가 할인까지 해줘요
-              </p>
+                <p>내 마음대로 고르는데</p>
+                <p>추가 할인까지 해줘요</p> 
+              </div>
             </div>
           </div>
           <div>

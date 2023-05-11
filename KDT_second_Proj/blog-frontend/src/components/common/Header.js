@@ -1,37 +1,46 @@
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import style from '../../css/jw_header.module.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from '../../../node_modules/react-router-dom/dist/index';
 
 
 const Header = ({user, onLogout}) => {
-    let a=[true, false, false, false]
-    const[onOff, setOnOff] = useState(a)
+    let a = [true, false, false, false]
+    const [onOff, setOnOff] = useState(a),
+          myInfo = useLocation();
 
-    const onOffFunction = (e) => {
-       let b = e.target.id
-       a = [false, false, false, false]
-
-       for(var i=0; i<a.length; i++){
-         if(b===`header${i+1}`){
-            a[i] = true
-         }
-       }
-       setOnOff(a)
+    if(myInfo.pathname.indexOf('main')!==-1){
+        a[0]=true
     }
+    if(myInfo.pathname.indexOf('myInfo')!==-1){
+        a[0]=false
+        a[1]=true
+    }
+    if(myInfo.pathname.indexOf('event')!==-1){
+        a[2]=true
+    }
+    if(myInfo.pathname.indexOf('cs')!==-1){
+        a[3]=true
+    }
+
+    useEffect(()=>{
+        setOnOff(a)
+    },[])
+    
             return(
                 <>
                 <div className={style.container}>
             <div className={style.header}>
                 <div className={style.menu}>
-                    <Link to='/' onClick={onOffFunction} ><img src={process.env.PUBLIC_URL + '../../logo.png'} alt=''/></Link>
-                    <Link to='/main' className={style.linkStyle}><button id='header1' onClick={onOffFunction} className={ (onOff[0] ? `${style.selected}`:null)}>구독신청</button></Link>
-                    <Link to='/main/myInfo' className={style.linkStyle}><button id='header2' onClick={onOffFunction} className={ (onOff[1] ? `${style.selected}`:null)}>MY 구독</button></Link>
-                    <Link to='/' className={style.linkStyle}><button id='header3' onClick={onOffFunction} className={ (onOff[2] ? `${style.selected}`:null)}>이벤트</button></Link>
-                    <Link to='/' className={style.linkStyle}><button id='header4' onClick={onOffFunction} className={ (onOff[3] ? `${style.selected}`:null)}>고객센터</button></Link>
+                    <Link to='/' ><img src={process.env.PUBLIC_URL + '../../logo.png'} alt=''/></Link>
+                    <Link to='/main' className={style.linkStyle}><button id='header1'  className={ (onOff[0] ? `${style.selected}`:null)}>구독신청</button></Link>
+                    <Link to='/main/myInfo' className={style.linkStyle}><button id='header2' className={ (onOff[1] ? `${style.selected}`:null)}>MY 구독</button></Link>
+                    <Link to='/' className={style.linkStyle}><button id='header3' className={ (onOff[2] ? `${style.selected}`:null)}>이벤트</button></Link>
+                    <Link to='/' className={style.linkStyle}><button id='header4' className={ (onOff[3] ? `${style.selected}`:null)}>고객센터</button></Link>
                 </div>
 
                       {user? (<>
-                               <div style={{marginLeft:'670px'}}>{user.username}</div>
+                               <div style={{marginRight:'-600px'}}>안녕하세요 {user.username} 님</div>
                             <div className={style.logIn}>
                                 <Link to='/main' onClick={onLogout} ><i style={{marginRight:'5px'}} className="fa-solid  fa-arrow-right-to-bracket" />로그아웃</Link>
                             </div></>
