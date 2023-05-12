@@ -1,3 +1,4 @@
+import Category from "../components/common/Category";
 import Responsive from "../components/common/Responsive";
 import EditorContainer from "../containers/write/EditorContainer";
 import TagBoxContainer from "../containers/write/TagBoxContainer";
@@ -9,6 +10,7 @@ const WritePage = () => {
         <Responsive>
             <EditorContainer/>
             <TagBoxContainer/>
+            <Category />
             <WriteActionButtonsContainer />
         </Responsive>
     )

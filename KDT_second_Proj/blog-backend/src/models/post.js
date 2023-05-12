@@ -1,9 +1,11 @@
 import mongoose from "mongoose";
+import autoIncrement from 'mongoose-auto-increment'
 
 
 const { Schema } = mongoose;
 
-
+const connection = mongoose.createConnection('mongodb://127.0.0.1:27017/blog');
+autoIncrement.initialize(connection);
 
 const PostSchema = new Schema({
     title: String,
@@ -19,11 +21,22 @@ const PostSchema = new Schema({
     },
     postCount: { 
         type : Number,
-        default: 1}
+        default: 0},
+    category: {
+        type: String,
+        required: true
+    },       
 })
 
-const Counter = mongoose.model("Counter", PostSchema);
-module.exports = { Counter };
+
+PostSchema.plugin(autoIncrement.plugin, {
+    model: "Post",
+    field: "postCount",
+    startAt: 1, // postCount 시작 값
+    incrementBy: 1, // postCount 증가 값
+});
+// const Counter = mongoose.model("Counter", PostSchema);
+// module.exports = { Counter };
 const Post = mongoose.model('Post', PostSchema);
 export default Post;
 

@@ -4,30 +4,22 @@ import palette from "../../lib/styles/palette";
 import Button from "../common/Button";
 
 // 회원가입 또는 로그인 폼을 보여줍니다. 
-
-const ErrorMessage = styled.div`
- color: red;
- text-align : center;
- font-size: 0.875rem;
- margin-top: 1rem;
- `
-
-
 const AuthFormBlock = styled.div`
 h3 {
-    margin: 0;
     color: ${palette.gray[8]};
-    margin-bottom: 1rem;
+    margin-bottom: 30px;
+    font-size: 24px;
 }`;
 
 // 스타일링된 input
 const StyledInput = styled.input`
-font-size: 1rem;
+font-size: 1.3rem;
 border: none;
 border-bottom: 1px solid ${palette.gray[5]};
 padding-bottom: 0.5rem;
 outline: none;
 width: 100%;
+margin-bottom: 30px;
 &:focus {
     color: $oc-teal-7;
     border-bottom: 1px solid ${palette.gray[7]}
@@ -50,12 +42,23 @@ const Footer = styled.div`
   }
   `;
 const ButtonWithMarginTop = styled(Button)`
-  margin-top: 1rem;`
+  margin-top: 1rem;
+  cursor: pointer;
+  `;
+
+  const ErrorMessage = styled.div`
+  color: red;
+  text-align : center;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  `
 
 const textMap = {
     login: '로그인',
     register: '회원가입',
 };
+
+
 
 const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
     const text = textMap[type];
@@ -78,7 +81,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
                     onChange={onChange}
                     value={form.password}
                 />
-             {type === 'register' &&(
+             {type === 'register' && (
                 <StyledInput 
                     autoComplete="new-password"
                     name="passwordConfirm"
@@ -88,16 +91,22 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
                     value={form.passwordConfirm}
                 />
                 )}
+               
                 {error && <ErrorMessage>{error}</ErrorMessage>}
-                <ButtonWithMarginTop cyan fullWidth style={{ marginTop : '1rem'}}>
+                <ButtonWithMarginTop fullWidth style={{ marginTop : '1rem', background: type === 'register' ? '#E6007E' : 'royalblue'}}>
                     {text}
                 </ButtonWithMarginTop>
             </form>
                 <Footer>
+                    
                     {type === 'login'? (
-                        <Link to="/register">회원가입</Link>
+                        <>
+                        <span>아직 회원이 아니신가요?</span> <Link to="/tos">회원가입</Link>
+                        </>
                     ) : (
-                        <Link to="/login">로그인</Link>
+                        <>
+                        <span>이미 회원이신가요?</span><Link to="/login">로그인</Link>
+                        </>
                     )}
                 </Footer>
         </AuthFormBlock>

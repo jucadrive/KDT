@@ -7,6 +7,10 @@ import Tags from "../common/Tags";
 import { Link } from 'react-router-dom'
 
 
+
+
+
+
 const PostListBlock = styled(Responsive)`
 margin-top: 3rem;
 ul li{
@@ -29,6 +33,7 @@ table thead {
 table thead td {
     padding-right : 45px;
 }
+min-height:590px;
 
 `;
 
@@ -68,18 +73,19 @@ tr td {
 `;
 
 
-const PostItem = ({post}) => {
-    const { publishedDate, user, tags, title, _id, postCount} = post;
+const PostItem = ({ post }) => {
+    const { publishedDate, user, tags, title, _id, postCount, category } = post;
+ 
     return (
+
         <PostItemBlock>
           <tr>
           <td>{postCount}</td>
-          <td>상품정보</td>
+          <td>{category}</td>
           <td style={{width:'320px'}}><Link to={`/:${user.username}/${_id}`}>{title}</Link></td>
           <td style={{width:'150px'}}><Tags tags={tags} /></td>
           <td style={{width:'150px'}}>{user.username}</td>
           <td style={{width:'150px'}}><SubInfo publishedDate={new Date(publishedDate)} /></td>
-          
          </tr>
         </PostItemBlock>
         

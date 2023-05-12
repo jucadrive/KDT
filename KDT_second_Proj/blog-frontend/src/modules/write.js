@@ -39,11 +39,12 @@ export const changeField = createAction(CHANGE_FIELD, ({key, value})=> ({
     value,
 }));
 
-export const writePost = createAction(WRITE_POST, ({ title, body, tags, postCount}) => ({
+export const writePost = createAction(WRITE_POST, ({ title, body, tags, postCount, category }) => ({
     title,
     body,
     tags,
     postCount,
+    category
 }));
 
 
@@ -62,6 +63,7 @@ const initialState = {
     title: '',
     body : '',
     tags : [],
+    category: '선택',
     post: null,
     postError: null,
     originalPostId : null,
@@ -97,6 +99,7 @@ const write = handleActions(
             title: post.title,
             body: post.body,
             tags: post.tags,
+            category: post.category,
             originalPostId: post._id,
         }),
         [UPDATE_POST_SUCCESS]: (state, {payload: post}) => ({

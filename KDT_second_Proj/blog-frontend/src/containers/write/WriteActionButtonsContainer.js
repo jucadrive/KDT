@@ -12,10 +12,11 @@ const WriteActionButtonsContainer = () => {
     //바뀐 스토어의 상태값을 다시 가져와 컴포넌트를 렌더링 시킨다.
     //Editor컴포넌트에서 새롭게 작성된 포스팅에서 title, body, onChangeField 값을 write로 받아와서
     //값이 변동됬을 시에 렌더링 시킨다. 
-    const { title, body, tags, post, postError, originalPostId } = useSelector(({write}) => ({
+    const { title, body, tags, post, postError, originalPostId, category } = useSelector(({ write }) => ({
         title: write.title,
         body: write.body,
         tags: write.tags,
+        category: write.category,
         post: write.post,
         postError : write.postError,
         originalPostId: write.originalPostId,
@@ -26,7 +27,7 @@ const WriteActionButtonsContainer = () => {
         //컴포넌트에서 originalPostId값이 존재하면 writePost 대신 updatePost 액션 생성함수가 실행되도록 처리
         //isEdit라는 props를 전달하여 originalPostId 값의 존재유무에 따라 버튼 이름을 수정 또는 등록으로 설정해주었음
         if(originalPostId){
-         dispatch(updatePost({ title, body, tags, id: originalPostId}));
+         dispatch(updatePost({ title, body, tags, id: originalPostId }));
          return;
         }
         dispatch(
@@ -34,6 +35,7 @@ const WriteActionButtonsContainer = () => {
                 title,
                 body,
                 tags,
+                category
             }),
         );
     };

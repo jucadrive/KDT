@@ -25,13 +25,13 @@
 // export const removePost = id => client.delete(`/api/posts/${id}`);
 import client from "./client";
 
-export const writePost = ({ title, body, tags, postCount}) => 
-  client.post('/api/posts', {title, body, tags, postCount});
+export const writePost = ({ title, body, tags, postCount, category  }) => 
+  client.post('/api/posts', { title, body, tags, postCount, category  });
 
 export const readPost = id => client.get(`/api/posts/${id}`);
 
 
-export const listPosts = ({ page, username, tag}) => {
+export const listPosts = ({ page, username, tag }) => {
     return client.get(`/api/posts`, {
         params: {page, username, tag},
     });

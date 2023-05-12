@@ -17,6 +17,7 @@ const TitleInput = styled.input`
  border-bottom: 1px solid ${palette.gray[4]};
  margin-bottom: 2rem;
  width: 100%;
+ background-color:rgb(250,250,250);
  `;
 
  const QuillWrapper = styled.div`

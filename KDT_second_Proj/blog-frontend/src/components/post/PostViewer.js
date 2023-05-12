@@ -7,7 +7,6 @@ import Tags from "../common/Tags";
 
 const PostViewerBlock = styled(Responsive)`
  margin-top: 4rem;
-
  `;
 
  const PostHead = styled.div`
@@ -24,7 +23,8 @@ const PostViewerBlock = styled(Responsive)`
  const PostContent = styled.div`
  font-size : 1.3125rem;
  color: ${palette.gray[8]};
- padding-bottom : 50px;`
+ padding-bottom : 50px;
+ min-height:440px;`
 
  const PostViewer = ({ post, error, loading, actionButtons }) => {
     if(error) {
@@ -53,7 +53,7 @@ const PostViewerBlock = styled(Responsive)`
             </PostHead>
             {actionButtons}
             <PostContent dangerouslySetInnerHTML={{ __html : body}} />
-            <div style={{textAlign:'center'}}><Button cyan to='/postlist'>목록보기</Button></div>
+            <div style={{marginBottom:'30px',textAlign:'center'}}><Button cyan to='/postlist'>목록보기</Button></div>
         </PostViewerBlock>
     )
  };
