@@ -341,31 +341,31 @@ function ApplySubscribe_jw() {
                 </div>
                 <div className={style.cs}>
                   <div className={style.csMenuArea1}>
-                    <div className={style.csMenuImg1}>
+                  <Link to="/" style={{color:'black'}}><div className={style.csMenuImg1}>
                       <img
                         src={process.env.PUBLIC_URL + '../../logo.png'}
                         alt=""
                       />
                     </div>
-                    <div className={style.csMenuTxt1}>JW 소개</div>
+                    <div className={style.csMenuTxt1}>Da독소개</div></Link>
                   </div>
                   <div className={style.csMenuArea2}>
-                    <div className={style.csMenuImg2}>
+                  <Link to="/postlist" style={{color:'black'}}><div className={style.csMenuImg2}>
                       <img
                         src={process.env.PUBLIC_URL + '../../logo.png'}
                         alt=""
                       />
                     </div>
-                    <div className={style.csMenuTxt2}>고객센터</div>
+                    <div className={style.csMenuTxt2}>고객센터</div></Link>
                   </div>
                   <div className={style.csMenuArea3}>
-                    <div className={style.csMenuImg3}>
+                  <Link to="https://www.naver.com" style={{color:'black'}}><div className={style.csMenuImg3}>
                       <img
                         src={process.env.PUBLIC_URL + '../../logo.png'}
                         alt=""
                       />
                     </div>
-                    <div className={style.csMenuTxt3}>재원닷컴</div>
+                    <div className={style.csMenuTxt3}>재원닷컴</div></Link>
                   </div>
                 </div>
               </div>

@@ -13,7 +13,7 @@ import sessionStorage from "../additional_features/jw_sessionStorage";
 import comma from "../additional_features/jw_amount_notation";
 import ModalJW from "./jw_modal";
 import { modalRdc } from "../data/jw_data";
-let [a, c, t, d, f] = [[], [], 0, 0, false];
+let [a, c, t, d] = [[], [], 0, 0];
 
 
 function Addcart(props) {
@@ -48,7 +48,6 @@ function Addcart(props) {
   // 로그인 전 구독하기 버튼 눌렀을 떄
 
   function beforeLogin(e) {
-    f = !f
     dispatch(modalRdc(isModal))
   }
   

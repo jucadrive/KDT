@@ -2,24 +2,38 @@ import { Link, useParams } from 'react-router-dom'
 import style from '../../css/jw_header.module.css';
 import { useEffect, useState } from "react";
 import { useLocation } from '../../../node_modules/react-router-dom/dist/index';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { modalRdc } from '../../data/jw_data';
 
 const Header = ({user, onLogout}) => {
     let a = [true, false, false, false]
     const [onOff, setOnOff] = useState(a),
+          isModal = useSelector(store=> store.dataSet.modalOnOff),
+          dispatch = useDispatch(),
           myInfo = useLocation();
 
     if(myInfo.pathname.indexOf('main')!==-1){
         a[0]=true
+        a[1]=false
+        a[2]=false
+        a[3]=false
     }
     if(myInfo.pathname.indexOf('myInfo')!==-1){
         a[0]=false
         a[1]=true
+        a[2]=false
+        a[3]=false        
     }
     if(myInfo.pathname.indexOf('event')!==-1){
+        a[0]=false
+        a[1]=false
         a[2]=true
+        a[3]=false    
     }
-    if(myInfo.pathname.indexOf('cs')!==-1){
+    if(myInfo.pathname.indexOf('postlist')!==-1 || myInfo.pathname.indexOf('notice')!==-1 || myInfo.pathname.indexOf('question')!==-1){
+        a[0]=false
+        a[1]=false
+        a[2]=false
         a[3]=true
     }
 
@@ -27,16 +41,19 @@ const Header = ({user, onLogout}) => {
         setOnOff(a)
     },[])
     
+    function mygoodocClick(){
+        dispatch(modalRdc(isModal))
+
+    }
             return(
                 <>
                 <div className={style.container}>
             <div className={style.header}>
                 <div className={style.menu}>
-                    <Link to='/' ><img src={process.env.PUBLIC_URL + '../../logo.png'} alt=''/></Link>
-                    <Link to='/main' className={style.linkStyle}><button id='header1'  className={ (onOff[0] ? `${style.selected}`:null)}>구독신청</button></Link>
-                    <Link to='/main/myInfo' className={style.linkStyle}><button id='header2' className={ (onOff[1] ? `${style.selected}`:null)}>MY 구독</button></Link>
-                    <Link to='/' className={style.linkStyle}><button id='header3' className={ (onOff[2] ? `${style.selected}`:null)}>이벤트</button></Link>
-                    <Link to='/' className={style.linkStyle}><button id='header4' className={ (onOff[3] ? `${style.selected}`:null)}>고객센터</button></Link>
+                    <Link to='/' ><img src={process.env.PUBLIC_URL + '../../../logo.png'} alt=''/></Link>
+                    <Link to='/main' className={style.linkStyle}><button id='header1'  className={ (onOff[0] ? `${style.selected}`:`${style.buttonOff}`)}>구독신청</button></Link>
+                    {user?<Link to='/main/myInfo' className={style.linkStyle}><button onClick={mygoodocClick} id='header2' className={ (onOff[1] ? `${style.selected}`:null)}>MY 구독</button></Link>:<button onClick={mygoodocClick} id='header2' className={ (onOff[1] ? `${style.selected}`:`${style.buttonOff}`)}>MY 구독</button>}
+                    <Link to='/postlist' className={style.linkStyle}><button id='header4' className={ (onOff[3] ? `${style.selected}`:`${style.buttonOff}`)}>고객센터</button></Link>
                 </div>
 
                       {user? (<>

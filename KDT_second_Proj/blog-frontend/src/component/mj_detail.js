@@ -6,6 +6,8 @@ import contentsSelect from "../additional_features/jw_contentsSelect";
 import { getKeyConvertJSRdc, totalPriceRdc, discountRdc } from "../data/jw_data";
 import sessionStorage from "../additional_features/jw_sessionStorage";
 import comma from "../additional_features/jw_amount_notation";
+
+
 let [a, c, t, d] = [[], [], 0, 0];
 /* ↓ 전체 페이지에서 왼쪽 부분에 Detail 게시물에서 선택한 상품의 상세정보가 보여짐 */
 
@@ -53,14 +55,12 @@ function SideRightBox(props) {
     const [isLoading, setIsLoading] = useState(false);
     const contentsData = data1.contentsData;
     const dispatch = useDispatch();
-    const [isAdded, setIsAdd] = useState();
     const detailList = data;
 
     useEffect(() => {
 
         setData(props.data)
         setIsLoading(val => !val)
-        setIsAdd(true)
       
     }, [])
 
@@ -88,11 +88,10 @@ function SideRightBox(props) {
                         <div>
                             <del className={style.saleprice}>{comma(detailList.price)+"원"}</del><br></br>
                             <span className={style.percent}>{ Math.round((1-((detailList.price - detailList.discount)/detailList.price))*100)}%</span>{comma(detailList.price - detailList.discount)+"원"}
-                            <Link to='/main'><button id={detailList.id} onClick={addCategory} className={style.right_addbtn}>{isAdded ? "+ 담기":"- 빼기"}</button></Link>
+                            <Link to='/main'><button id={detailList.id} onClick={addCategory} className={style.right_addbtn}>+ 담기</button></Link>
                         </div>
                     </div>
                 </div>
-
             </div>
             <Link to={'/main'} className={style.right_detailbtn}>
                 다른 구독 상품 보러가기
