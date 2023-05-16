@@ -64,6 +64,7 @@ export const write = async ctx => {
         title: Joi.string().required(),
         body: Joi.string().required(),
         category: Joi.string().required(),
+        postCount: Joi.number(),
         tags : Joi.array()
         .items(Joi.string())
         .required(),
@@ -76,13 +77,13 @@ export const write = async ctx => {
         ctx.body = result.error;
         return;
     }
-    const { title, body, tags, category } = ctx.request.body;
+    const { title, body, tags, category, postCount } = ctx.request.body;
     const post = new Post( {
         title,
         body: sanitizeHtml(body, sanitizeOption),
         tags,
         user : ctx.state.user,
-        postCount : ctx.state.postCount,
+        postCount,
         category
     })
     try {

@@ -12,13 +12,14 @@ const WriteActionButtonsContainer = () => {
     //바뀐 스토어의 상태값을 다시 가져와 컴포넌트를 렌더링 시킨다.
     //Editor컴포넌트에서 새롭게 작성된 포스팅에서 title, body, onChangeField 값을 write로 받아와서
     //값이 변동됬을 시에 렌더링 시킨다. 
-    const { title, body, tags, post, postError, originalPostId, category } = useSelector(({ write }) => ({
+    const { title, body, tags, post, postError, originalPostId, category, postCount } = useSelector(({ write }) => ({
         title: write.title,
         body: write.body,
         tags: write.tags,
         category: write.category,
         post: write.post,
-        postError : write.postError,
+        postCount: write.postCount,
+        postError: write.postError,
         originalPostId: write.originalPostId,
     }));
 
@@ -26,42 +27,43 @@ const WriteActionButtonsContainer = () => {
     const onPublish = () => {
         //컴포넌트에서 originalPostId값이 존재하면 writePost 대신 updatePost 액션 생성함수가 실행되도록 처리
         //isEdit라는 props를 전달하여 originalPostId 값의 존재유무에 따라 버튼 이름을 수정 또는 등록으로 설정해주었음
-        if(originalPostId){
-         dispatch(updatePost({ title, body, tags, id: originalPostId }));
-         return;
+        if (originalPostId) {
+            dispatch(updatePost({ title, body, tags, id: originalPostId }));
+            return;
         }
         dispatch(
             writePost({
                 title,
                 body,
                 tags,
-                category
+                category,
+                postCount
             }),
         );
     };
-//취소
-const onCancel = () => {
-    navigate(-1);
-};
-useEffect(() => {
-    if(post) {
-        const { _id, user } = post;
-        navigate(`/@${user.username}/${_id}`);
-    }
-    if(postError) {
-        console.log(postError);
-    }
-}, [navigate, post, postError]);
+    //취소
+    const onCancel = () => {
+        navigate(-1);
+    };
+    useEffect(() => {
+        if (post) {
+            const { _id, user } = post;
+            navigate(`/@${user.username}/${_id}`);
+        }
+        if (postError) {
+            console.log(postError);
+        }
+    }, [navigate, post, postError]);
 
-// useEffect() : [deps] 에 특정 값을 넣게 된다면, 
-// 컴포넌트가 처음 마운트 될 때에도 호출이 되고, 지정한 값이 바뀔 때에도 호출이 됩니다.
-// useEffect 안에서 사용하는 상태나 props 를 deps 에 넣지 않게 된다면 useEffect 에 
-// 등록한 함수가 실행 될 때 최신 props / 상태를 가르키지 않게 됩니다.
+    // useEffect() : [deps] 에 특정 값을 넣게 된다면, 
+    // 컴포넌트가 처음 마운트 될 때에도 호출이 되고, 지정한 값이 바뀔 때에도 호출이 됩니다.
+    // useEffect 안에서 사용하는 상태나 props 를 deps 에 넣지 않게 된다면 useEffect 에 
+    // 등록한 함수가 실행 될 때 최신 props / 상태를 가르키지 않게 됩니다.
 
-return <WriteActionButtons 
+    return <WriteActionButtons
         onPublish={onPublish}
         onCancel={onCancel}
-        isEdit={!!originalPostId}  />;
+        isEdit={!!originalPostId} />;
 }; //3개의 props를 전달
 
 
