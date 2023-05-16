@@ -46,7 +46,6 @@ function Right_mypage_menu(props) {
     const contentsData = data.contentsData;
     const dataBox = data.getKeyConvertJS;
     const dispatch = useDispatch();
-    console.log(dataBox)
 
     //const sessionStorage = window.sessionStorage;
     // const getKey = sessionStorage.getItem("key");
@@ -82,10 +81,8 @@ function Right_mypage_menu(props) {
     for (let i = 0; i < 3; i++) {
         let useId = contentsData[i].id
         let randomId = "ID" + Math.floor(Math.random() * contentsData.length)
-        console.log(randomId);
 
         let findData = contentsData.find((x) => x.id === useId);
-        console.log(findData);
 
         if (findData) {
             randomData.push(findData)

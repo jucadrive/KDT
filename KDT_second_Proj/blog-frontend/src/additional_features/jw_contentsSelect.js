@@ -1,4 +1,4 @@
-let  a = [],
+let  a=[],
   c = [],
   d = 0,
   g = true,
@@ -26,6 +26,7 @@ function contentsSelect(contentsData, resultData, e) {
         else{}
   
         switch (c[j]) {
+          
           // 해당하는 컨텐츠를 담았을 때 세션 스토리지에 보낼 데이터 추가 & 가격 더하기 
           case true:
             if(a.length<5){

@@ -13,7 +13,6 @@ function Mj_mypage_month() {
     const data = useSelector(store => store.dataSet),
         contentData = data.contentsData
 
-    console.log(contentData)
 
 
     return (

@@ -17,7 +17,6 @@ function App() {
         <SwiperSlide><img src={process.env.PUBLIC_URL + '/swiper_2.png'} alt=""/></SwiperSlide>
         <SwiperSlide><img src={process.env.PUBLIC_URL + '/swiper_3.png'} alt=""/></SwiperSlide>
         <SwiperSlide><img src={process.env.PUBLIC_URL + '/swiper_4.png'} alt=""/></SwiperSlide>
-        <SwiperSlide><img src={process.env.PUBLIC_URL + '/swiper_5.png'} alt=""/></SwiperSlide>
         <SwiperSlide><img src={process.env.PUBLIC_URL + '/swiper_6.png'} alt=""/></SwiperSlide>
         <SwiperSlide><img src={process.env.PUBLIC_URL + '/swiper_7.png'} alt=""/></SwiperSlide>
         <SwiperSlide><img src={process.env.PUBLIC_URL + '/swiper_8.png'} alt=""/></SwiperSlide>

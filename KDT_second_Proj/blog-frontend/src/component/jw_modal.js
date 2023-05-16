@@ -14,7 +14,6 @@ export default function ModalJW() {
 
     useEffect(()=>{
         setB(document.documentElement.scrollTop + document.documentElement.clientHeight*0.3 )
-        console.log(document.documentElement.clientHeight)
     },[]) 
     function closeFn(e) {
         document.body.style="overflow:none"
