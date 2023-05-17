@@ -8,7 +8,6 @@ import { modalRdc } from '../../data/jw_data';
 const Header = ({user, onLogout}) => {
     let a = [true, false, false, false]
     const [onOff, setOnOff] = useState(a),
-          isModal = useSelector(store=> store.dataSet.modalOnOff),
           dispatch = useDispatch(),
           myInfo = useLocation();
 
@@ -42,7 +41,7 @@ const Header = ({user, onLogout}) => {
     },[])
     
     function mygoodocClick(){
-        dispatch(modalRdc(isModal))
+        dispatch(modalRdc(false))
 
     }
             return(
@@ -52,14 +51,14 @@ const Header = ({user, onLogout}) => {
                 <div className={style.menu}>
                     <Link to='/' ><img src={process.env.PUBLIC_URL + '../../../logo.png'} alt=''/></Link>
                     <Link to='/main' className={style.linkStyle}><button id='header1'  className={ (onOff[0] ? `${style.selected}`:`${style.buttonOff}`)}>구독신청</button></Link>
-                    {user?<Link to='/main/myInfo' className={style.linkStyle}><button onClick={mygoodocClick} id='header2' className={ (onOff[1] ? `${style.selected}`:null)}>MY 구독</button></Link>:<button onClick={mygoodocClick} id='header2' className={ (onOff[1] ? `${style.selected}`:`${style.buttonOff}`)}>MY 구독</button>}
+                    {user?<Link to='/main/myInfo' className={style.linkStyle}><button id='header2' className={ (onOff[1] ? `${style.selected}`:null)}>MY 구독</button></Link>:<button onClick={mygoodocClick} id='header2' className={ (onOff[1] ? `${style.selected}`:`${style.buttonOff}`)}>MY 구독</button>}
                     <Link to='/postlist' className={style.linkStyle}><button id='header4' className={ (onOff[3] ? `${style.selected}`:`${style.buttonOff}`)}>고객센터</button></Link>
                 </div>
 
                       {user? (<>
                                <div style={{marginRight:'-600px'}}>안녕하세요 {user.username} 님</div>
                             <div className={style.logIn}>
-                                <Link to='/main' onClick={onLogout} ><i style={{marginRight:'5px'}} className="fa-solid  fa-arrow-right-to-bracket" />로그아웃</Link>
+                                <Link to='/main' onClick={onLogout} ><i style={{marginRight:'5px'}} className="fa-solid fa-arrow-right-to-bracket" />로그아웃</Link>
                             </div></>
                         ) : (
                             <div className={style.logIn}>

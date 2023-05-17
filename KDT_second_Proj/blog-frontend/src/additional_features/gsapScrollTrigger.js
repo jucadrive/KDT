@@ -109,15 +109,12 @@ function gaspScrollTrigger(idx1, idx2, idx3, idx4, idx5, idx6, idx7) {
     gsap.fromTo(
       idx5.current[i],
       { scale: 0 },
-      {
-        scale: 1,
-        delay: 0.1 * i,
+      { scale: 1,delay: 0.1 * i,
         scrollTrigger: {
           trigger: idx5.current[0],
           start: "500 70%",
           end: "1500 70%",
-          toggleActions: "restart reverse restart reverse",
-
+          toggleActions: "restart reverse restart reverse"
         },
       }
     );

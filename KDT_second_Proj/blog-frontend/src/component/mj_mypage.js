@@ -102,7 +102,7 @@ function Right_mypage_menu(props) {
                             <div className="container px-5" style={{ padding: "0px", margin: "0px", width: "1240px" }}>
 
                                 <h1 className="fw-bolder fs-5 mb-4">{props.user.username}님이 구독신청 하신 상품입니다.</h1>
-                                {
+                                { 
                                     dataBox.map((value, idx) => {
                                         return (
                                             <div className={`card border-0 shadow rounded-3 ${style.mj_cardStyle} `

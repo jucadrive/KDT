@@ -7,6 +7,8 @@ import Tags from "../common/Tags";
 import { Link } from 'react-router-dom'
 import LeftMenu from "../common/LeftMenu";
 import '../../App.css'
+import { useSelector } from "react-redux";
+import ModalJW from "../../component/jw_modal";
 
 const PostListBlock = styled(Responsive)`
 min-height:570px;
@@ -113,12 +115,13 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
     //         }
     //     }
     // }
-
+    const isModal = useSelector(store=>store.dataSet.modalOnOff),
+    user = useSelector(({ user }) => ({ user: user.user }))
     if (error) {
         return <PostListBlock>에러가 발생했습니다.</PostListBlock>
     }
     return (
-        <>
+        <>{user.user===null && (isModal===true) ? <ModalJW visible={isModal}/> : ""}
             <div className="postleft"><LeftMenu /></div>
             <PostListBlock>
                 <h2>문의 게시판</h2>
