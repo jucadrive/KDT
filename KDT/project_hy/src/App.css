@@ -1,0 +1,94 @@
+.MenuBox{
+  margin-left: 11%;
+  
+}
+
+.LeftMenuBox {
+  border: 1px solid white;
+  width:  300px;
+  height: 55px;
+  border-radius: 15px;
+  background-color: white;
+  margin: 7px;
+  margin-left: 10%;
+  text-indent: 20px;
+  color: grey;
+  line-height: 55px;
+  font-size: 15px
+}
+
+.headerBox {
+  list-style-type: none;
+  display : flex;
+  gap: 50px;
+  margin-left: 10%;
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+
+.questiontitle{
+  font-size: 18px;
+  font-weight: bold;
+  
+}
+
+.questioncontent {
+  font-weight: lighter;
+  background-color: white;
+  width: 800px;
+  padding: 20px;
+  font-size: 14px;
+  border-radius: 15px;
+}
+
+
+
+
+
+.noticetitle {
+  margin-left: 10%;
+  margin-left: 34%;
+}
+
+.noticebox {
+  width: 800px;
+  height: 50px;
+  text-indent: 20px;
+  line-height: 50px;
+  background-color: rgb(226, 226, 226);
+  border: 1px solid rgb(241, 240, 240);
+  margin: 7px;
+  border-radius: 15px;
+  margin-left: 33%
+}
+.questionbulletin {
+  margin-left: 33%;
+  border: 1px solid white;
+  background-color: white;
+  width: 800px;
+  border-radius: 15px;
+  padding: 30px;
+}
+.questionbulletin .submenu{
+  display: flex;
+  list-style-type: none;
+  gap: 25px;
+  justify-content: center; 
+}
+.questionbulletin table{
+ margin-left: 30px;
+ border-collapse: collapse;
+ border: 1px solid black;
+ width: 730px;
+}
+.writebtn{
+  margin-top: 20px;
+  margin-left: 660px;
+  width: 100px;
+  height: 30px;
+}
+
+.searchbox {
+  margin-left: 30px;
+  
+}
